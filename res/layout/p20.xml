@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:background="@drawable/all">
+	<!-- properties -->
+	<RelativeLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="fill_parent"
+		android:background="@drawable/prop_background"
+		android:layout_height="90dp">
+		<!-- 金钱tag-->
+		<TextView
+			android:id="@+id/money_tag"
+			android:layout_width="60dp"
+			android:layout_height="wrap_content"
+			android:gravity="center"
+			android:text="金钱" />
+		<!-- 金钱数值 -->
+		<TextView
+			android:id="@+id/money_num"
+			android:layout_width="100dp"
+			android:layout_height="wrap_content"
+			android:layout_toRightOf="@id/money_tag"
+			android:gravity="center"
+			android:text="$23423" />
+
+		<!-- 收钱倒计时 -->
+		<TextView
+			android:id="@+id/earntime_num"
+			android:layout_width="100dp"
+			android:layout_height="wrap_content"
+			android:layout_below="@id/money_tag"
+			android:gravity="center"
+			android:text="收钱倒计时" />
+
+		<!-- 等级 -->
+		<TextView
+			android:id="@+id/level_num"
+			android:layout_width="60dp"
+			android:layout_height="wrap_content"
+			android:layout_below="@id/money_num"
+			android:layout_toRightOf="@id/earntime_num"
+			android:gravity="center"
+			android:text="等级" />
+		<!-- 经验 -->
+		<!-- 经验槽 -->
+		<ProgressBar
+			android:id="@+id/progress_exp"
+			style="?android:attr/progressBarStyleHorizontal"
+			android:layout_width="100dp"
+			android:layout_height="wrap_content"
+			android:layout_toRightOf="@id/money_num"
+			android:layout_alignBottom="@id/money_num"
+			android:max="100"
+			android:progress="35"
+			android:gravity="center"
+			android:text="经验槽" />
+		<!-- 经验值 -->
+		<TextView
+			android:id="@+id/exp_num"
+			android:layout_width="100dp"
+			android:layout_height="wrap_content"
+			android:layout_below="@id/money_num"
+			android:layout_toRightOf="@id/level_num"
+			android:gravity="center"
+			android:text="2012(经验)" />
+		<!-- 帮助 -->
+		<TextView
+			android:id="@+id/help"
+			android:layout_width="60dp"
+			android:layout_height="wrap_content"
+			android:layout_toRightOf="@id/progress_exp"
+			android:layout_alignTop="@id/progress_exp"
+			android:layout_alignBottom="@id/exp_num"
+			android:gravity="center"
+			android:text="帮助" />
+		<!-- 精力 -->
+		<TextView
+			android:id="@+id/energy_num"
+			android:layout_width="80dp"
+			android:layout_height="wrap_content"
+			android:layout_below="@id/earntime_num"
+			android:gravity="center"
+			android:text="精力" />
+		<!-- 体力 -->
+		<TextView
+			android:id="@+id/health_num"
+			android:layout_width="80dp"
+			android:layout_height="wrap_content"
+			android:layout_below="@id/level_num"
+			android:layout_toRightOf="@id/energy_num"
+			android:gravity="center"
+			android:text="体力" />
+		<!-- 移动力 -->
+		<TextView
+			android:id="@+id/action_num"
+			android:layout_width="80dp"
+			android:layout_height="wrap_content"
+			android:layout_below="@id/level_num"
+			android:layout_toRightOf="@id/health_num"
+			android:gravity="center"
+			android:text="移动力" />
+		<!-- 好友 -->
+		<TextView
+			android:id="@+id/friend_num"
+			android:layout_width="80dp"
+			android:layout_height="wrap_content"
+			android:layout_below="@id/level_num"
+			android:layout_toRightOf="@id/action_num"
+			android:gravity="center"
+			android:text="好友" />
+		<!-- 精力恢复时间 -->
+		<TextView
+			android:id="@+id/energy_re_num"
+			android:layout_width="80dp"
+			android:layout_height="wrap_content"
+			android:layout_below="@id/energy_num"
+			android:gravity="center"
+			android:text="精力恢复时间" />
+
+		<!-- 体力恢复时间 -->
+		<TextView
+			android:id="@+id/health_re_num"
+			android:layout_width="80dp"
+			android:layout_height="wrap_content"
+			android:layout_below="@id/energy_num"
+			android:layout_toRightOf="@id/energy_re_num"
+			android:gravity="center"
+			android:text="体力恢复时间" />
+		<!-- 行动力回复时间 -->
+		<TextView
+			android:id="@+id/action_re_num"
+			android:layout_width="80dp"
+			android:layout_height="wrap_content"
+			android:layout_below="@id/energy_num"
+			android:layout_toRightOf="@id/health_re_num"
+			android:gravity="center"
+			android:text="行动力恢复时间" />
+		<!-- 游戏名称tag -->
+		<TextView
+			android:id="@+id/game_name"
+			android:layout_width="80dp"
+			android:layout_height="wrap_content"
+			android:layout_below="@id/energy_num"
+			android:layout_toRightOf="@id/action_re_num"
+			android:gravity="center"
+			android:text="游戏名称" />
+	</RelativeLayout>
+	<ImageView
+		android:src="@drawable/docter"
+		android:layout_width="fill_parent"
+		android:layout_height="150dp" />
+	<TextView
+		android:id="@+id/docter_text"
+		android:layout_width="fill_parent"
+		android:layout_height="100dp"
+		android:text="此处省略1W字" />
+	<TextView
+		android:id="@+id/cost"
+		android:layout_width="fill_parent"
+		android:layout_height="50dp"
+		android:text="医疗费用:金额" />
+	<RelativeLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="fill_parent"
+		android:layout_height="50dp">
+		<Button
+			android:id="@+id/cost_no"
+			android:layout_width="160dp"
+			android:layout_height="50dp"
+			android:text="不治疗(click)" />
+		<Button
+			android:id="@+id/cost_yes"
+			android:layout_width="160dp"
+			android:layout_height="50dp"
+			android:layout_toRightOf="@id/cost_no"
+			android:text="付费治疗(click)" />
+	</RelativeLayout>
+	<RelativeLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="fill_parent"
+		android:background="@drawable/below_background"
+		android:layout_height="50dp">
+		<ImageButton
+			android:id="@+id/img_back"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:gravity="center"
+			android:src="@drawable/back" />
+	</RelativeLayout>
+
+</LinearLayout>

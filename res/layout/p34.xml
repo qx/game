@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:background="@drawable/all">
+	<ScrollView
+		android:measureAllChildren="true"
+		android:id="@+id/p34_containerBody"
+		android:layout_weight="1"
+		android:layout_height="440dp"
+		android:layout_width="fill_parent"
+		android:isScrollContainer="false" />
+	<ImageButton
+		android:id="@+id/p34_img_back"
+		android:layout_width="wrap_content"
+		android:layout_height="40dp"
+		android:gravity="center"
+		android:src="@drawable/back" />
+</LinearLayout>

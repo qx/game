@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	android:background="@drawable/all"
+	android:id="@+id/widget51"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	xmlns:android="http://schemas.android.com/apk/res/android">
+	<TextView
+		android:id="@+id/widget60"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="请设定昵称"
+		android:layout_alignParentTop="true"
+		android:layout_centerHorizontal="true" />
+	<TextView
+		android:id="@+id/nickname_2"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="18个字符内"
+		android:layout_centerVertical="true"
+		android:layout_alignLeft="@+id/widget60" />
+	<EditText
+		android:id="@+id/nickname_1"
+		android:layout_width="245px"
+		android:layout_height="wrap_content"
+		android:text="请输入你想设定的昵称"
+		android:textSize="18sp"
+		android:layout_above="@+id/nickname_2"
+		android:layout_centerHorizontal="true" />
+	<Button
+		android:id="@+id/nickname_3"
+		android:layout_width="99px"
+		android:layout_height="wrap_content"
+		android:text="返回上一步"
+		android:layout_alignParentBottom="true"
+		android:layout_alignParentLeft="true" />
+	<Button
+		android:id="@+id/nickname_4"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="下一步"
+		android:layout_alignParentBottom="true"
+		android:layout_alignParentRight="true" />
+</RelativeLayout>

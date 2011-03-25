@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="75dp"
+	android:background="@drawable/list_background">
+	<ImageView
+		android:id="@+id/land_img"
+		android:layout_width="160dp"
+		android:layout_height="75dp"
+		android:src="@drawable/i2" />
+	<LinearLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_toRightOf="@id/land_img"
+		android:layout_alignParentRight="true"
+		android:orientation="vertical"
+		android:layout_width="fill_parent"
+		android:layout_height="75dp">
+		<TextView
+			android:id="@+id/name"
+			android:layout_width="fill_parent"
+			android:layout_height="18.75dp"
+			android:text="房产名称(click)" />
+		<TextView
+			android:id="@+id/income"
+			android:layout_width="fill_parent"
+			android:layout_height="18.75dp"
+			android:text="收入金额(click)" />
+		<TextView
+			android:id="@+id/land_sort"
+			android:layout_width="fill_parent"
+			android:layout_height="18.75dp"
+			android:text=" 所属土地分类" />
+		<TextView
+			android:id="@+id/allincome"
+			android:layout_width="fill_parent"
+			android:layout_height="18.75dp"
+			android:text="收入:  总金额" />
+	</LinearLayout>
+</RelativeLayout>

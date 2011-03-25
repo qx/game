@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:background="@drawable/all">
+	<TextView
+		android:id="@+id/rewards"
+		android:layout_width="fill_parent"
+		android:layout_height="20dp"
+		android:gravity="center"
+		android:text="奖励点数:数字" />
+	<TextView
+		android:id="@+id/shop"
+		android:layout_width="fill_parent"
+		android:layout_height="20dp"
+		android:gravity="center"
+		android:text="黑店送你:数字" />
+	<!--
+		==================================================================
+	-->
+	<RelativeLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="fill_parent"
+		android:layout_height="160dp">
+		<LinearLayout
+			xmlns:android="http://schemas.android.com/apk/res/android"
+			android:id="@+id/r1"
+			android:orientation="vertical"
+			android:layout_width="60dp"
+			android:layout_height="160dp">
+			<ImageView
+				android:id="@+id/img1"
+				android:layout_width="60dp"
+				android:layout_height="40dp"
+				android:src="@drawable/i10" />
+			<ImageView
+				android:id="@+id/img2"
+				android:layout_width="60dp"
+				android:layout_height="40dp"
+				android:src="@drawable/i10" />
+			<ImageView
+				android:id="@+id/img3"
+				android:layout_width="60dp"
+				android:layout_height="40dp"
+				android:src="@drawable/i10" />
+			<ImageView
+				android:id="@+id/img3"
+				android:layout_width="60dp"
+				android:layout_height="40dp"
+				android:src="@drawable/i10" />
+		</LinearLayout>
+		<LinearLayout
+			xmlns:android="http://schemas.android.com/apk/res/android"
+			android:id="@+id/r2"
+			android:layout_toRightOf="@id/r1"
+			android:orientation="vertical"
+			android:layout_width="160dp"
+			android:layout_height="fill_parent">
+			<TextView
+				android:id="@+id/t1"
+				android:layout_width="160dp"
+				android:layout_height="20dp"
+				android:text="增加一个好友人数" />
+			<TextView
+				android:id="@+id/t2"
+				android:layout_width="160dp"
+				android:layout_height="20dp"
+				android:text="所需点数" />
+			<TextView
+				android:id="@+id/t3"
+				android:layout_width="160dp"
+				android:layout_height="20dp"
+				android:text="精力全满" />
+			<TextView
+				android:id="@+id/t4"
+				android:layout_width="160dp"
+				android:layout_height="20dp"
+				android:text="所需点数" />
+			<TextView
+				android:id="@+id/t5"
+				android:layout_width="160dp"
+				android:layout_height="20dp"
+				android:text="移动力全满" />
+			<TextView
+				android:id="@+id/t6"
+				android:layout_width="160dp"
+				android:layout_height="20dp"
+				android:text="所需点数" />
+			<TextView
+				android:id="@+id/t7"
+				android:layout_width="160dp"
+				android:layout_height="20dp"
+				android:text="增加4点技能点数" />
+			<TextView
+				android:id="@+id/t8"
+				android:layout_width="160dp"
+				android:layout_height="20dp"
+				android:text="所需点数" />
+		</LinearLayout>
+		<LinearLayout
+			xmlns:android="http://schemas.android.com/apk/res/android"
+			android:orientation="vertical"
+			android:layout_width="100dp"
+			android:layout_height="fill_parent"
+			android:layout_toRightOf="@id/r2">
+			<Button
+				android:id="@+id/b1"
+				android:text="使用--&gt;click(dia)"
+				android:layout_width="100dp"
+				android:layout_height="40dp" />
+			<Button
+				android:id="@+id/b2"
+				android:text="使用--&gt;click(dia)"
+				android:layout_width="100dp"
+				android:layout_height="40dp" />
+			<Button
+				android:id="@+id/b3"
+				android:text="使用--&gt;click(dia)"
+				android:layout_width="100dp"
+				android:layout_height="40dp" />
+			<Button
+				android:id="@+id/b4"
+				android:text="使用--&gt;click(dia)"
+				android:layout_width="100dp"
+				android:layout_height="40dp" />
+		</LinearLayout>
+	</RelativeLayout>
+
+	<!-- ====================================================== -->
+	<TextView
+		android:id="@+id/more_rewards"
+		android:layout_width="fill_parent"
+		android:layout_height="30dp"
+		android:gravity="center"
+		android:text="得到的更多奖励点数:数字" />
+	<!--
+		==================================================================
+	-->
+	<RelativeLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="fill_parent"
+		android:layout_height="200dp">
+		<LinearLayout
+			xmlns:android="http://schemas.android.com/apk/res/android"
+			android:id="@+id/r4"
+			android:orientation="vertical"
+			android:layout_width="220dp"
+			android:layout_height="200dp">
+			<TextView
+				android:id="@+id/t8"
+				android:layout_width="220dp"
+				android:layout_height="20dp"
+				android:text="多少奖励点数" />
+			<TextView
+				android:id="@+id/t9"
+				android:layout_width="220dp"
+				android:layout_height="20dp"
+				android:text="所需人民币" />
+			<TextView
+				android:id="@+id/t10"
+				android:layout_width="220dp"
+				android:layout_height="20dp"
+				android:text="多少奖励点数" />
+			<TextView
+				android:id="@+id/t11"
+				android:layout_width="220dp"
+				android:layout_height="20dp"
+				android:text="所需人民币" />
+			<TextView
+				android:id="@+id/t12"
+				android:layout_width="220dp"
+				android:layout_height="20dp"
+				android:text="多少奖励点数" />
+			<TextView
+				android:id="@+id/t13"
+				android:layout_width="220dp"
+				android:layout_height="20dp"
+				android:text="所需人民币" />
+			<TextView
+				android:id="@+id/t14"
+				android:layout_width="220dp"
+				android:layout_height="20dp"
+				android:text="多少奖励点数" />
+			<TextView
+				android:id="@+id/t15"
+				android:layout_width="220dp"
+				android:layout_height="20dp"
+				android:text="所需人民币" />
+			<TextView
+				android:id="@+id/t16"
+				android:layout_width="220dp"
+				android:layout_height="20dp"
+				android:text="多少奖励点数" />
+			<TextView
+				android:id="@+id/t17"
+				android:layout_width="220dp"
+				android:layout_height="20dp"
+				android:text="所需人民币" />
+		</LinearLayout>
+		<LinearLayout
+			xmlns:android="http://schemas.android.com/apk/res/android"
+			android:orientation="vertical"
+			android:layout_width="100dp"
+			android:layout_height="200dp"
+			android:layout_toRightOf="@id/r4">
+			<Button
+				android:id="@+id/b5"
+				android:text="使用--&gt;click(dia)"
+				android:layout_width="100dp"
+				android:layout_height="40dp" />
+			<Button
+				android:id="@+id/b6"
+				android:text="使用--&gt;click(dia)"
+				android:layout_width="100dp"
+				android:layout_height="40dp" />
+			<Button
+				android:id="@+id/b7"
+				android:text="使用--&gt;click(dia)"
+				android:layout_width="100dp"
+				android:layout_height="40dp" />
+			<Button
+				android:id="@+id/b8"
+				android:text="使用--&gt;click(dia)"
+				android:layout_width="100dp"
+				android:layout_height="40dp" />
+			<Button
+				android:id="@+id/b9"
+				android:text="使用--&gt;click(dia)"
+				android:layout_width="100dp"
+				android:layout_height="40dp" />
+		</LinearLayout>
+	</RelativeLayout>
+	<!--
+		==================================================================================
+	-->
+	<RelativeLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="fill_parent"
+		android:layout_height="50dp">
+		<ImageButton
+			android:id="@+id/img_back"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:gravity="center"
+			android:src="@drawable/back" />
+	</RelativeLayout>
+</LinearLayout>

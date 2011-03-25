@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:background="@drawable/all">
+
+	<!-- properties -->
+	<RelativeLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="fill_parent"
+		android:layout_height="80dp">
+		<!-- 金钱tag-->
+		<TextView
+			android:id="@+id/p12_money_tag"
+			android:layout_width="60dp"
+			android:layout_height="20dp"
+			android:gravity="center"
+			android:text="金钱" />
+		<!-- 金钱数值 -->
+		<TextView
+			android:id="@+id/p12_money_num"
+			android:layout_width="100dp"
+			android:layout_height="20dp"
+			android:layout_toRightOf="@id/p12_money_tag"
+			android:gravity="center"
+			android:text="$23423" />
+
+		<!-- 收钱倒计时 -->
+		<TextView
+			android:id="@+id/p12_earntime_num"
+			android:layout_width="100dp"
+			android:layout_height="20dp"
+			android:layout_below="@id/p12_money_tag"
+			android:gravity="center"
+			android:text="收钱倒计时" />
+
+		<!-- 等级 -->
+		<TextView
+			android:id="@+id/p12_level_num"
+			android:layout_width="60dp"
+			android:layout_height="20dp"
+			android:layout_below="@id/p12_money_num"
+			android:layout_toRightOf="@id/p12_earntime_num"
+			android:gravity="center"
+			android:text="等级" />
+		<!-- 经验 -->
+		<!-- 经验槽 -->
+		<ProgressBar
+			android:id="@+id/p12_progress_exp"
+			style="?android:attr/progressBarStyleHorizontal"
+			android:layout_width="100dp"
+			android:layout_height="20dp"
+			android:layout_toRightOf="@id/p12_money_num"
+			android:layout_alignBottom="@id/p12_money_num"
+			android:max="100"
+			android:progress="35"
+			android:gravity="center"
+			android:text="经验槽" />
+		<!-- 经验值 -->
+		<TextView
+			android:id="@+id/p12_exp_num"
+			android:layout_width="100dp"
+			android:layout_height="20dp"
+			android:layout_below="@id/p12_money_num"
+			android:layout_toRightOf="@id/p12_level_num"
+			android:gravity="center"
+			android:text="2012(经验)" />
+		<!-- 帮助 -->
+		<TextView
+			android:id="@+id/p12_help"
+			android:layout_width="60dp"
+			android:layout_height="20dp"
+			android:layout_toRightOf="@id/p12_progress_exp"
+			android:layout_alignTop="@id/p12_progress_exp"
+			android:layout_alignBottom="@id/p12_exp_num"
+			android:gravity="center"
+			android:text="帮助" />
+		<!-- 精力 -->
+		<TextView
+			android:id="@+id/p12_energy_num"
+			android:layout_width="80dp"
+			android:layout_height="20dp"
+			android:layout_below="@id/p12_earntime_num"
+			android:gravity="center"
+			android:text="精力" />
+		<!-- 体力 -->
+		<TextView
+			android:id="@+id/p12_health_num"
+			android:layout_width="80dp"
+			android:layout_height="20dp"
+			android:layout_below="@id/p12_level_num"
+			android:layout_toRightOf="@id/p12_energy_num"
+			android:gravity="center"
+			android:text="体力" />
+		<!-- 移动力 -->
+		<TextView
+			android:id="@+id/p12_action_num"
+			android:layout_width="80dp"
+			android:layout_height="20dp"
+			android:layout_below="@id/p12_level_num"
+			android:layout_toRightOf="@id/p12_health_num"
+			android:gravity="center"
+			android:text="移动力" />
+		<!-- 好友 -->
+		<TextView
+			android:id="@+id/p12_friend_num"
+			android:layout_width="80dp"
+			android:layout_height="20dp"
+			android:layout_below="@id/p12_level_num"
+			android:layout_toRightOf="@id/p12_action_num"
+			android:gravity="center"
+			android:text="好友" />
+		<!-- 精力恢复时间 -->
+		<TextView
+			android:id="@+id/p12_energy_re_num"
+			android:layout_width="80dp"
+			android:layout_height="20dp"
+			android:layout_below="@id/p12_energy_num"
+			android:gravity="center"
+			android:text="精力恢复时间" />
+
+		<!-- 体力恢复时间 -->
+		<TextView
+			android:id="@+id/p12_health_re_num"
+			android:layout_width="80dp"
+			android:layout_height="20dp"
+			android:layout_below="@id/p12_energy_num"
+			android:layout_toRightOf="@id/p12_energy_re_num"
+			android:gravity="center"
+			android:text="体力恢复时间" />
+		<!-- 行动力回复时间 -->
+		<TextView
+			android:id="@+id/p12_action_re_num"
+			android:layout_width="80dp"
+			android:layout_height="20dp"
+			android:layout_below="@id/p12_energy_num"
+			android:layout_toRightOf="@id/p12_health_re_num"
+			android:gravity="center"
+			android:text="行动力恢复时间" />
+		<!-- 游戏名称tag -->
+		<TextView
+			android:id="@+id/p12_game_name"
+			android:layout_width="80dp"
+			android:layout_height="20dp"
+			android:layout_below="@id/p12_energy_num"
+			android:layout_toRightOf="@id/p12_action_re_num"
+			android:gravity="center"
+			android:text="游戏名称" />
+	</RelativeLayout>
+	<ScrollView
+		android:measureAllChildren="true"
+		android:id="@+id/p12_containerBody"
+		android:layout_weight="1"
+		android:layout_height="fill_parent"
+		android:layout_width="fill_parent" />
+	<ImageButton
+		android:id="@+id/p12_img_back"
+		android:layout_width="wrap_content"
+		android:layout_height="50dp"
+		android:gravity="center"
+		android:src="@drawable/back" />
+</LinearLayout>

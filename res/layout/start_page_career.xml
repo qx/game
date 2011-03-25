@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:background="@drawable/all"
+	android:id="@+id/widget37"
+	android:orientation="vertical"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+	<TextView
+		android:id="@+id/career_1"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="请选择角色属性"
+		android:layout_gravity="center"
+		android:textSize="30sp"
+		android:layout_alignParentTop="true" />
+	<RadioGroup
+		android:id="@+id/RadioGroup01"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:orientation="vertical"
+		android:layout_x="3dp"
+		android:layout_y="54dp">
+		<RadioButton
+			android:id="@+id/career_2"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="智力型"
+			android:layout_centerVertical="true"
+			android:layout_alignParentLeft="true" />
+		<TextView
+			android:id="@+id/career_3"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="精力恢复加快"
+			android:layout_alignParentLeft="true"
+			android:textSize="30sp" />
+		<RadioButton
+			android:id="@+id/career_4"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="敏捷"
+			android:layout_alignParentLeft="true" />
+		<TextView
+			android:id="@+id/career_5"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="移动恢复加快"
+			android:layout_alignParentLeft="true"
+			android:textSize="30sp" />
+		<RadioButton
+			android:id="@+id/career_6"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="力量"
+			android:layout_alignParentLeft="true" />
+		<TextView
+			android:id="@+id/career_7"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="血量恢复加快"
+			android:layout_alignParentLeft="true"
+			android:textSize="30sp" />
+	</RadioGroup>
+	<RelativeLayout
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		xmlns:android="http://schemas.android.com/apk/res/android">
+		<Button
+			android:id="@+id/career_8"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="返回"
+			android:layout_alignParentBottom="true"
+			android:layout_alignParentLeft="true" />
+		<Button
+			android:id="@+id/career_9"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="下一步"
+			android:layout_alignParentBottom="true"
+			android:layout_alignParentRight="true" />
+	</RelativeLayout>
+</LinearLayout>

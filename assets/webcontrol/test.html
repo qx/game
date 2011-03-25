@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<SCRIPT LANGUAGE="JavaScript">
+	function contactlist(jsons){
+			var table=document.getElementById("contactTable");
+			var arr=eval(jsons);
+			for(var i=0; i<arr.length;i++){
+				var jsonObj=arr[i];
+				var tr=table.insertRow(table.rows.length);
+				var td1=tr.insertCell(0);
+				var td2=tr.insertCell(1);
+				td2.align="center";
+				var td3=tr.insertCell(2);
+				td1.innerHTML=jsonObj.id;
+				td2.innerHTML=jsonObj.name;
+				td3.innerHTML="<a href=\"javascript:itcast.call('"+jsonObj.phone+"')\">"+jsonObj.phone+"</a>";
+		
+		}
+		}
+	function pageinit(){
+		var content="[{id:56,name:'laozhang',phone:'13333'},{id:34,name:'laobi',phone:'1214'}]";
+		contactlist(content);
+	}
+	
+</SCRIPT>
+</head>
+
+<body onload="javascript:itcast.show()">
+
+	<table width="100%" border="0"	 cellspacing="0" id="contactTable">
+		<tr bgcolor="#EEF7FF" style="font-size:18px;FONT-WEIGHT: bold;">
+			<td width="20%"">编号</td>
+			<td alighn="center">姓名</td>
+			<td width="30%">电话</td>
+		</tr>
+	</table>
+
+
+</body>
+</html>

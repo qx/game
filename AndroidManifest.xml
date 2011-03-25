@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	package="com.fullwish.action"
+	android:versionCode="1"
+	android:versionName="1.0">
+	<application
+		android:icon="@drawable/m_war"
+		android:label="@string/app_name"
+		android:theme="@style/fullscreen">
+		<uses-library
+			android:name="com.google.android.maps" />
+		<uses-library
+			android:name="android.test.runner" />
+		<activity
+			android:name=".Start_page_country"
+			android:label="@string/app_name">
+			<intent-filter>
+				<action
+					android:name="android.intent.action.MAIN" />
+				<category
+					android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+		<activity
+			android:name=".Start_page_career"
+			android:label="选择角色" />
+		<activity
+			android:name=".Start_page_introduce"
+			android:label="介绍" />
+		<activity
+			android:name=".Start_page_nickname"
+			android:label="昵称" />
+		<activity
+			android:name=".Page_p1_Activity"
+			android:label="1" />
+		<activity
+			android:name=".Page_p2_Activity"
+			android:label="2" />
+		<activity
+			android:name=".Page_p3_Activity"
+			android:label="3" />
+		<activity
+			android:name=".Page_p4_Activity"
+			android:label="4" />
+		<activity
+			android:name=".Page_p5_Activity"
+			android:label="5" />
+		<activity
+			android:name=".Page_p678_Activity"
+			android:label="678" />
+		<activity
+			android:name=".Page_p9_Activity"
+			android:label="9" />
+		<activity
+			android:name=".Page_p11_Activity"
+			android:label="11" />
+		<activity
+			android:name=".Page_p12_Activity"
+			android:label="12" />
+		<activity
+			android:name=".Page_p13_Activity"
+			android:label="13" />
+		<activity
+			android:name=".Page_p14_Activity"
+			android:label="14" />
+		<activity
+			android:name=".Page_p16_Activity"
+			android:label="16" />
+		<activity
+			android:name=".Friend_tab"
+			android:label="16_tab" />
+		<activity
+			android:name=".Friend_attention"
+			android:label="16_attention" />
+		<activity
+			android:name=".Friend_beattention"
+			android:label="16_beattention" />
+		<activity
+			android:name=".Page_p17_Activity"
+			android:label="17" />
+		<activity
+			android:name=".Page_p18_Activity"
+			android:label="18" />
+		<activity
+			android:name=".Page_p20_Activity"
+			android:label="20" />
+		<activity
+			android:name=".Page_p21_Activity"
+			android:label="21" />
+		<activity
+			android:name=".Page_p22_Activity"
+			android:label="22" />
+		<activity
+			android:name=".Page_p23_Activity"
+			android:label="23" />
+		<activity
+			android:name=".Page_p24_Activity"
+			android:label="24" />
+		<activity
+			android:name=".Page_p25_Activity"
+			android:label="25" />
+		<activity
+			android:name=".Page_p26_Activity"
+			android:label="26" />
+		<activity
+			android:name=".Page_p27_Activity"
+			android:label="27" />
+		<activity
+			android:name=".Page_p28_Activity"
+			android:label="28" />
+		<activity
+			android:name=".Page_p31_Activity"
+			android:label="31" />
+		<activity
+			android:name=".Page_p32_Activity"
+			android:label="32" />
+		<activity
+			android:name=".Page_p34_Activity"
+			android:label="34" />
+		<activity
+			android:name=".P34_tab"
+			android:label="p34_tab" />
+		<activity
+			android:name=".P34_tab_map"
+			android:label="p34_tab_map" />
+		<activity
+			android:name=".Page_p35_Activity"
+			android:label="35" />
+		<activity
+			android:name=".Mission_tab"
+			android:label="mission_tab" />
+		<activity
+			android:name=".Mission_list"
+			android:label="mission_list" />
+		<activity
+			android:name=".Kid_list"
+			android:label="kid_list" />
+		<activity
+			android:name=".Kid_click"
+			android:label="kid_click" />
+		<activity
+			android:name=".Kid_my"
+			android:label="kid_my" />
+		<activity
+			android:name=".Kid_save"
+			android:label="kid_save" />
+		<activity
+			android:name=".Kid_tab"
+			android:label="kid_tab" />
+		<activity
+			android:name=".Hide_list"
+			android:label="hide_list" />
+		<activity
+			android:name=".Blog_kill_tab"
+			android:label="blog_kill_tab" />
+		<activity
+			android:name=".Blog_kill_near"
+			android:label="blog_kill_near" />
+		<activity
+			android:name=".Blog_kill_attention"
+			android:label="blog_kill_attention" />
+		<activity
+			android:name=".Blog_kill_fans"
+			android:label="blog_kill_fans" />
+		<activity
+			android:name=".Post_tab"
+			android:label="post_tab" />
+		<activity
+			android:name=".Post_kill"
+			android:label="post_kill" />
+		<activity
+			android:name=".Post_post"
+			android:label="post_post" />
+		<activity
+			android:name=".Post_show"
+			android:label="post_show" />
+		<activity
+			android:name=".Business_land"
+			android:label="Business_land" />
+		<activity
+			android:name=".Business_estate"
+			android:label="Business_estate" />
+		<activity
+			android:name=".Equit"
+			android:label="equit" />
+		<activity
+			android:name=".Equit_tab"
+			android:label="equit_tab" />
+	</application>
+	<uses-sdk
+		android:minSdkVersion="6" />
+	<instrumentation
+		android:name="android.test.InstrumentationTestRunner"
+		android:targetPackage="com.fullwish.action"
+		android:label="Tests for My App" />
+	<uses-permission
+		android:name="android.permission.INTERNET" />
+	<uses-permission
+		android:name="android.permission.ACCESS_COARSE_LOCATION" />
+	<uses-permission
+		android:name="android.permission.ACCESS_FINE_LOCATION" />
+	<uses-permission
+		android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+</manifest>

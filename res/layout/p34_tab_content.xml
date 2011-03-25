@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:background="@drawable/all"
+	android:layout_width="wrap_content"
+	android:layout_height="375dp">
+	<LinearLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		android:orientation="vertical"
+		android:id="@+id/tab1"
+		android:layout_width="fill_parent"
+		android:layout_height="380dp">
+		<TextView
+			android:id="@+id/name"
+			android:layout_width="fill_parent"
+			android:layout_height="20dp"
+			android:text="名称" />
+		<TextView
+			android:id="@+id/address"
+			android:layout_width="fill_parent"
+			android:layout_height="20dp"
+			android:text="地址" />
+		<TextView
+			android:id="@+id/player"
+			android:layout_width="fill_parent"
+			android:layout_height="20dp"
+			android:text="太守/将军:该地点最多胜的玩家" />
+		<EditText
+			android:id="@+id/post"
+			android:gravity="center"
+			android:layout_width="320dp"
+			android:layout_height="200dp" />
+		<EditText
+			android:id="@+id/private_post"
+			android:text="私密消息(仅对自己可见)"
+			android:layout_width="320dp"
+			android:layout_height="40dp"
+			android:textSize="12sp" />
+		<Button
+			style="?android:attr/buttonStyleSmall"
+			android:id="@+id/done"
+			android:text="确认发送"
+			android:layout_width="wrap_content"
+			android:layout_height="40dp"
+			android:layout_gravity="right" />
+		<TextView
+			android:id="@+id/advise"
+			android:text="建议设置同步,和好友分享你的冒险(click)!!!"
+			android:layout_width="fill_parent"
+			android:layout_height="60dp"
+			android:clickable="true" />
+	</LinearLayout>
+	<!--
+		<TextView android:id="@+id/tab2" android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:text="页2"/>
+	-->
+</FrameLayout>

@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:background="@drawable/all">
+	<!-- above -->
+	<RelativeLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="fill_parent"
+		android:background="@drawable/above_background"
+		android:layout_height="15dp" />
+
+	<!-- properties -->
+	<RelativeLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="fill_parent"
+		android:background="@drawable/prop_background"
+		android:layout_height="90dp">
+		<!-- 金钱tag-->
+		<TextView
+			android:id="@+id/money_tag"
+			android:layout_width="60dp"
+			android:layout_height="wrap_content"
+			android:gravity="center"
+			android:text="金钱" />
+		<!-- 金钱数值 -->
+		<TextView
+			android:id="@+id/money_num"
+			android:layout_width="100dp"
+			android:layout_height="wrap_content"
+			android:layout_toRightOf="@id/money_tag"
+			android:gravity="center"
+			android:text="$23423" />
+
+		<!-- 收钱倒计时 -->
+		<TextView
+			android:id="@+id/earntime_num"
+			android:layout_width="100dp"
+			android:layout_height="wrap_content"
+			android:layout_below="@id/money_tag"
+			android:gravity="center"
+			android:text="收钱倒计时" />
+
+		<!-- 等级 -->
+		<TextView
+			android:id="@+id/level_num"
+			android:layout_width="60dp"
+			android:layout_height="wrap_content"
+			android:layout_below="@id/money_num"
+			android:layout_toRightOf="@id/earntime_num"
+			android:gravity="center"
+			android:text="等级" />
+		<!-- 经验 -->
+		<!-- 经验槽 -->
+		<ProgressBar
+			android:id="@+id/progress_exp"
+			style="?android:attr/progressBarStyleHorizontal"
+			android:layout_width="100dp"
+			android:layout_height="wrap_content"
+			android:layout_toRightOf="@id/money_num"
+			android:layout_alignBottom="@id/money_num"
+			android:max="100"
+			android:progress="35"
+			android:gravity="center"
+			android:text="经验槽" />
+		<!-- 经验值 -->
+		<TextView
+			android:id="@+id/exp_num"
+			android:layout_width="100dp"
+			android:layout_height="wrap_content"
+			android:layout_below="@id/money_num"
+			android:layout_toRightOf="@id/level_num"
+			android:gravity="center"
+			android:text="2012(经验)" />
+		<!-- 帮助 -->
+		<TextView
+			android:id="@+id/help"
+			android:layout_width="60dp"
+			android:layout_height="wrap_content"
+			android:layout_toRightOf="@id/progress_exp"
+			android:layout_alignTop="@id/progress_exp"
+			android:layout_alignBottom="@id/exp_num"
+			android:gravity="center"
+			android:text="帮助" />
+		<!-- 精力 -->
+		<TextView
+			android:id="@+id/energy_num"
+			android:layout_width="80dp"
+			android:layout_height="wrap_content"
+			android:layout_below="@id/earntime_num"
+			android:gravity="center"
+			android:text="精力" />
+		<!-- 体力 -->
+		<TextView
+			android:id="@+id/health_num"
+			android:layout_width="80dp"
+			android:layout_height="wrap_content"
+			android:layout_below="@id/level_num"
+			android:layout_toRightOf="@id/energy_num"
+			android:gravity="center"
+			android:text="体力" />
+		<!-- 移动力 -->
+		<TextView
+			android:id="@+id/action_num"
+			android:layout_width="80dp"
+			android:layout_height="wrap_content"
+			android:layout_below="@id/level_num"
+			android:layout_toRightOf="@id/health_num"
+			android:gravity="center"
+			android:text="移动力" />
+		<!-- 好友 -->
+		<TextView
+			android:id="@+id/friend_num"
+			android:layout_width="80dp"
+			android:layout_height="wrap_content"
+			android:layout_below="@id/level_num"
+			android:layout_toRightOf="@id/action_num"
+			android:gravity="center"
+			android:text="好友" />
+		<!-- 精力恢复时间 -->
+		<TextView
+			android:id="@+id/energy_re_num"
+			android:layout_width="80dp"
+			android:layout_height="wrap_content"
+			android:layout_below="@id/energy_num"
+			android:gravity="center"
+			android:text="精力恢复时间" />
+
+		<!-- 体力恢复时间 -->
+		<TextView
+			android:id="@+id/health_re_num"
+			android:layout_width="80dp"
+			android:layout_height="wrap_content"
+			android:layout_below="@id/energy_num"
+			android:layout_toRightOf="@id/energy_re_num"
+			android:gravity="center"
+			android:text="体力恢复时间" />
+		<!-- 行动力回复时间 -->
+		<TextView
+			android:id="@+id/action_re_num"
+			android:layout_width="80dp"
+			android:layout_height="wrap_content"
+			android:layout_below="@id/energy_num"
+			android:layout_toRightOf="@id/health_re_num"
+			android:gravity="center"
+			android:text="行动力恢复时间" />
+		<!-- 游戏名称tag -->
+		<TextView
+			android:id="@+id/game_name"
+			android:layout_width="80dp"
+			android:layout_height="wrap_content"
+			android:layout_below="@id/energy_num"
+			android:layout_toRightOf="@id/action_re_num"
+			android:gravity="center"
+			android:text="游戏名称" />
+	</RelativeLayout>
+	<LinearLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		android:orientation="horizontal"
+		android:layout_width="fill_parent"
+		android:layout_height="20dp">
+		<TextView
+			android:text="你的攻击力和防御"
+			android:layout_width="220dp"
+			android:layout_height="20dp" />
+		<TextView
+			android:text="攻击力"
+			android:layout_width="50dp"
+			android:layout_height="20dp" />
+		<TextView
+			android:text="防御"
+			android:layout_width="50dp"
+			android:layout_height="20dp" />
+	</LinearLayout>
+	<!-- action -->
+	<LinearLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		android:orientation="horizontal"
+		android:layout_width="fill_parent"
+		android:layout_height="40dp">
+		<Button
+			style="?android:attr/buttonStyleSmall"
+			android:id="@+id/post_btn"
+			android:layout_width="160dp"
+			android:layout_height="40dp"
+			android:text="发帖" />
+		<Button
+			style="?android:attr/buttonStyleSmall"
+			android:id="@+id/map_btn"
+			android:layout_width="160dp"
+			android:layout_height="40dp"
+			android:text="地图" />
+	</LinearLayout>
+	<TextView
+		android:text="太守/将军:该地点最多胜的玩家"
+		android:gravity="center"
+		android:layout_height="20dp"
+		android:layout_width="fill_parent" />
+	<RelativeLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="fill_parent"
+		android:layout_height="80dp"
+		android:background="@drawable/list_background">
+		<ImageView
+			android:id="@+id/head"
+			android:layout_width="50dp"
+			android:layout_height="80dp"
+			android:src="@drawable/i4" />
+
+		<!-- ========================================== -->
+		<LinearLayout
+			xmlns:android="http://schemas.android.com/apk/res/android"
+			android:id="@+id/layout1"
+			android:orientation="vertical"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_toRightOf="@id/head">
+			<!-- 集团================================.圈人数 -->
+			<RelativeLayout
+				xmlns:android="http://schemas.android.com/apk/res/android"
+				android:layout_width="170dp"
+				android:layout_height="20dp">
+				<TextView
+					android:id="@+id/kid_country"
+					android:text="集团"
+					android:layout_width="120dp"
+					android:layout_height="20dp" />
+				<TextView
+					android:id="@+id/kid_num"
+					android:text="攻击力"
+					android:layout_width="50dp"
+					android:layout_height="20dp"
+					android:layout_toRightOf="@id/kid_country" />
+			</RelativeLayout>
+
+			<!-- ====昵称  救人数=============== -->
+			<RelativeLayout
+				xmlns:android="http://schemas.android.com/apk/res/android"
+				android:layout_width="170dp"
+				android:layout_height="20dp">
+				<TextView
+					android:id="@+id/kid_nickname"
+					android:text="昵称"
+					android:layout_width="120dp"
+					android:layout_height="20dp" />
+				<TextView
+					android:id="@+id/kid_num"
+					android:text="防御力"
+					android:layout_width="50dp"
+					android:layout_height="20dp"
+					android:layout_toRightOf="@id/kid_nickname" />
+			</RelativeLayout>
+			<!-- ===========职业   折磨数============================ -->
+			-->
+			<RelativeLayout
+				xmlns:android="http://schemas.android.com/apk/res/android"
+				android:layout_width="170dp"
+				android:layout_height="20dp">
+				<TextView
+					android:id="@+id/kid_career"
+					android:text="职业"
+					android:layout_width="120dp"
+					android:layout_height="20dp" />
+				<TextView
+					android:id="@+id/kid_kid"
+					android:text="好友"
+					android:layout_width="50dp"
+					android:layout_height="20dp"
+					android:layout_toRightOf="@id/kid_career" />
+			</RelativeLayout>
+			<!-- ==========等级  金钱================== -->
+			<RelativeLayout
+				xmlns:android="http://schemas.android.com/apk/res/android"
+				android:layout_width="170dp"
+				android:layout_height="20dp">
+				<TextView
+					android:id="@+id/kid_level"
+					android:text="等级"
+					android:layout_width="120dp"
+					android:layout_height="20dp" />
+				<TextView
+					android:id="@+id/kid_money"
+					android:text="金钱"
+					android:layout_width="50dp"
+					android:layout_height="20dp"
+					android:layout_toRightOf="@id/kid_level" />
+			</RelativeLayout>
+		</LinearLayout>
+		<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+		<Button
+			android:id="@+id/kid_done"
+			android:layout_toRightOf="@id/layout1"
+			android:layout_width="100dp"
+			android:layout_height="80dp"
+			android:text="杀--&gt;dia" />
+	</RelativeLayout>
+	<TextView
+		android:text="最近杀的人"
+		android:layout_width="fill_parent"
+		android:layout_height="20dp"
+		android:gravity="center" />
+
+	<!--     android:background="@drawable/beach"  -->
+	<!-- listthings -->
+	<FrameLayout
+		android:layout_width="fill_parent"
+		android:layout_height="180dp"
+		android:background="@drawable/list_background"
+		android:layout_weight="1">
+		<ListView
+			android:id="@android:id/list"
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent"
+			android:drawSelectorOnTop="false" />
+	</FrameLayout>
+	<!-- below -->
+	<RelativeLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="fill_parent"
+		android:background="@drawable/below_background"
+		android:layout_height="40dp">
+		<ImageButton
+			android:id="@+id/img_back"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:gravity="center"
+			android:src="@drawable/back" />
+	</RelativeLayout>
+</LinearLayout>

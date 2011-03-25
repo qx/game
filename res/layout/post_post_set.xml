@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+	<TextView
+		android:id="@+id/post_post_name"
+		android:layout_width="fill_parent"
+		android:layout_height="20dp"
+		android:text="名      称" />
+	<TextView
+		android:id="@+id/post_post_address"
+		android:layout_width="fill_parent"
+		android:layout_height="20dp"
+		android:text="地      点" />
+	<EditText
+		android:id="@+id/post_post_content"
+		android:layout_width="fill_parent"
+		android:layout_height="330dp"
+		android:text="140字发帖栏" />
+</LinearLayout>

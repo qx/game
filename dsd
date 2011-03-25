@@ -1,0 +1,59 @@
+[33m980c57c[m HEAD@{0}: commit: 1222
+[33ma616eb1[m HEAD@{1}: commit: 1221finish
+[33m83eb882[m HEAD@{2}: checkout: moving from m_war1 to master
+[33mbaf3f68[m HEAD@{3}: commit: m_war1
+[33m8f18623[m HEAD@{4}: commit: m_war1
+[33m71f92fd[m HEAD@{5}: commit: m_war1
+[33m97447f6[m HEAD@{6}: checkout: moving from master to m_war1
+[33m83eb882[m HEAD@{7}: commit: git ls-files --deleted -z | xargs -0 git rm
+[33m06854ab[m HEAD@{8}: commit: merge_delete
+[33m6ae38b3[m HEAD@{9}: commit: git reset --hard
+[33m97447f6[m HEAD@{10}: merge m_war1: Fast-forward
+[33mcea7432[m HEAD@{11}: checkout: moving from m_war1 to master
+[33m97447f6[m HEAD@{12}: commit: m_war1
+[33m190fab2[m HEAD@{13}: checkout: moving from master to m_war1
+[33mcea7432[m HEAD@{14}: checkout: moving from m_war1 to master
+[33m190fab2[m HEAD@{15}: commit: 1221
+[33mcea7432[m HEAD@{16}: checkout: moving from master to m_war1
+[33mcea7432[m HEAD@{17}: commit: 1216
+[33me00453c[m HEAD@{18}: commit: add readme8
+[33mdb43bb1[m HEAD@{19}: commit: add readme7
+[33mb44bddb[m HEAD@{20}: commit: add readme6
+[33mba33744[m HEAD@{21}: commit: add readme4
+[33m135f7fe[m HEAD@{22}: commit: add readme3
+[33md848fe7[m HEAD@{23}: commit: add readme2
+[33mfa5e0f0[m HEAD@{24}: commit: add readme
+[33mae48d70[m HEAD@{25}: checkout: moving from m_war3 to master
+[33m15d030e[m HEAD@{26}: commit: testm3
+[33m50372be[m HEAD@{27}: commit: m3_1
+[33mae48d70[m HEAD@{28}: checkout: moving from master to m_war3
+[33mae48d70[m HEAD@{29}: commit: m_ed
+[33m7c1f6c4[m HEAD@{30}: checkout: moving from m_war2 to master
+[33ma8ad616[m HEAD@{31}: checkout: moving from master to m_war2
+[33m7c1f6c4[m HEAD@{32}: commit: masteredit
+[33mac36d0f[m HEAD@{33}: checkout: moving from m_war2 to master
+[33ma8ad616[m HEAD@{34}: checkout: moving from master to m_war2
+[33mac36d0f[m HEAD@{35}: checkout: moving from m_war2 to master
+[33ma8ad616[m HEAD@{36}: commit: 34
+[33m23e3c23[m HEAD@{37}: checkout: moving from master to m_war2
+[33mac36d0f[m HEAD@{38}: commit: kll
+[33m6f89fed[m HEAD@{39}: commit: kl
+[33m94e51dd[m HEAD@{40}: checkout: moving from m_war2 to master
+[33m23e3c23[m HEAD@{41}: checkout: moving from master to m_war2
+[33m94e51dd[m HEAD@{42}: commit: 1214_1623
+[33mfbc6be1[m HEAD@{43}: commit: 1214
+[33mf3dfacf[m HEAD@{44}: checkout: moving from m_war3 to master
+[33mef18257[m HEAD@{45}: commit: 1214
+[33mf3dfacf[m HEAD@{46}: checkout: moving from master to m_war3
+[33mf3dfacf[m HEAD@{47}: commit: finnally json
+[33m3eba152[m HEAD@{48}: commit: m_war2
+[33mac22950[m HEAD@{49}: commit: m_war2
+[33m23e3c23[m HEAD@{50}: checkout: moving from new_branch to master
+[33m16c96a5[m HEAD@{51}: commit: json-ok
+[33m2083d7e[m HEAD@{52}: commit: friday
+[33m23e3c23[m HEAD@{53}: checkout: moving from master to new_branch
+[33m23e3c23[m HEAD@{54}: commit: 6
+[33m49395bf[m HEAD@{55}: commit: 4
+[33m2e1f658[m HEAD@{56}: commit: 3
+[33m136006c[m HEAD@{57}: commit: company commit
+[33md1e4687[m HEAD@{58}: commit (initial): first commit

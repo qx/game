@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:background="@drawable/all"
+	android:layout_width="fill_parent"
+	android:layout_height="120dp">
+	<RelativeLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="fill_parent"
+		android:layout_height="20dp">
+		<TextView
+			android:id="@+id/skill_name"
+			android:layout_width="200dp"
+			android:layout_height="20dp"
+			android:text="技能名称" />
+		<TextView
+			android:id="@+id/grow_exp"
+			android:layout_width="60dp"
+			android:layout_height="20dp"
+			android:layout_toRightOf="@id/skill_name"
+			android:text="加经验" />
+		<TextView
+			android:id="@+id/grow_money"
+			android:layout_width="60dp"
+			android:layout_height="20dp"
+			android:layout_toRightOf="@id/grow_exp"
+			android:text="加金钱" />
+	</RelativeLayout>
+	<RelativeLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="fill_parent"
+		android:layout_height="20dp">
+		<TextView
+			android:layout_width="100dp"
+			android:layout_height="20dp"
+			android:id="@+id/prg_skill"
+			android:text="技能进度" />
+		<ProgressBar
+			android:id="@+id/bar_skill"
+			style="?android:attr/progressBarStyleHorizontal"
+			android:layout_width="fill_parent"
+			android:layout_height="20dp"
+			android:layout_toRightOf="@id/prg_skill"
+			android:max="100"
+			android:progress="35"
+			android:gravity="center"
+			android:text="技能熟悉度" />
+	</RelativeLayout>
+	<RelativeLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="fill_parent"
+		android:layout_height="80dp">
+		<TextView
+			android:id="@+id/energy_limit"
+			android:layout_width="50dp"
+			android:layout_height="40dp"
+			android:text="精力限制" />
+		<TextView
+			android:id="@+id/friend_limit"
+			android:layout_width="50dp"
+			android:layout_height="40dp"
+			android:layout_below="@id/energy_limit"
+			android:text="好友限制" />
+		<ImageView
+			android:id="@+id/equi_1"
+			android:layout_width="50dp"
+			android:layout_height="80dp"
+			android:layout_toRightOf="@id/energy_limit"
+			android:layout_alignBottom="@id/friend_limit"
+			android:src="@drawable/i1" />
+		<ImageView
+			android:id="@+id/equi_2"
+			android:layout_width="50dp"
+			android:layout_height="80dp"
+			android:layout_toRightOf="@id/equi_1"
+			android:layout_alignBottom="@id/friend_limit"
+			android:src="@drawable/i2" />
+		<ImageView
+			android:id="@+id/equi_3"
+			android:layout_width="50dp"
+			android:layout_height="80dp"
+			android:layout_toRightOf="@id/equi_2"
+			android:layout_alignBottom="@id/friend_limit"
+			android:src="@drawable/i3" />
+		<ImageButton
+			android:id="@+id/skill_done"
+			android:layout_width="fill_parent"
+			android:layout_toRightOf="@id/equi_3"
+			android:layout_height="80dp"
+			android:src="@drawable/i9"
+			android:text="执行任务" />
+	</RelativeLayout>
+</LinearLayout>

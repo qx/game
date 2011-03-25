@@ -1,0 +1,30 @@
+
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/tab2"
+	android:orientation="vertical"
+	android:layout_width="fill_parent"
+	android:layout_height="375dp">
+	<TextView
+		android:id="@+id/tab2_name"
+		android:layout_width="fill_parent"
+		android:layout_height="20dp"
+		android:text="名称" />
+	<TextView
+		android:id="@+id/tab2_address"
+		android:layout_width="fill_parent"
+		android:layout_height="20dp"
+		android:text="地址" />
+	<TextView
+		android:id="@+id/tab2_player"
+		android:layout_width="fill_parent"
+		android:layout_height="20dp"
+		android:text="太守/将军:该地点最多胜的玩家" />
+	<com.google.android.maps.MapView
+		android:id="@+id/mapid"
+		android:layout_width="fill_parent"
+		android:layout_height="315dp"
+		android:enabled="true"
+		android:clickable="true"
+		android:apiKey="0yj6uRdj9p0rck2ViKnXBB2EUAwHIewegAmKhMA" />
+</LinearLayout>

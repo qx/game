@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="80dp"
+	android:background="@drawable/list_background">
+	<!-- ====================大头照===================== -->
+	<ImageView
+		android:id="@+id/post_kill_head"
+		android:layout_width="50dp"
+		android:layout_height="80dp"
+		android:src="@drawable/i4" />
+
+	<!-- ========================================== -->
+	<LinearLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		android:orientation="vertical"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:layout_toRightOf="@id/post_kill_head">
+		<RelativeLayout
+			xmlns:android="http://schemas.android.com/apk/res/android"
+			android:layout_width="fill_parent"
+			android:layout_height="20dp">
+			<TextView
+				android:id="@+id/nickname"
+				android:layout_width="170dp"
+				android:layout_height="20dp"
+				android:text="对方昵称" />
+			<TextView
+				android:id="@+id/time"
+				android:layout_width="100dp"
+				android:layout_height="20dp"
+				android:layout_toRightOf="@id/nickname"
+				android:text="时间" />
+		</RelativeLayout>
+		<TextView
+			android:id="@+id/post_content"
+			android:text="在某地点杀(张三)"
+			android:layout_width="fill_parent"
+			android:layout_height="60dp"
+			android:textSize="20sp" />
+	</LinearLayout>
+</RelativeLayout>

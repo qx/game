@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	android:background="@drawable/all"
+	android:id="@+id/widget67"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	xmlns:android="http://schemas.android.com/apk/res/android">
+	<TextView
+		android:id="@+id/introduce_1"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="欢迎来到移动三国"
+		android:textSize="25sp"
+		android:layout_centerVertical="true"
+		android:layout_centerHorizontal="true" />
+	<Button
+		android:id="@+id/introduce_2"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="开始"
+		android:layout_alignParentBottom="true"
+		android:layout_alignParentRight="true" />
+	<Button
+		android:id="@+id/introduce_3"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="退出"
+		android:layout_alignParentBottom="true"
+		android:layout_alignParentLeft="true" />
+</RelativeLayout>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="80dp"
+	android:background="@drawable/list_background">
+	<!-- ====================大头照===================== -->
+	<ImageView
+		android:id="@+id/kid_my_head"
+		android:layout_width="50dp"
+		android:layout_height="80dp"
+		android:src="@drawable/i4" />
+
+	<!-- ========================================== -->
+	<LinearLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		android:id="@+id/kid_my_layout1"
+		android:orientation="vertical"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:layout_toRightOf="@id/kid_my_head">
+		<!-- ============昵称==============圈人数======. -->
+		<TextView
+			android:id="@+id/kid_my_nickname"
+			android:text="昵称"
+			android:layout_width="fill_parent"
+			android:layout_height="40dp"
+			android:textSize="20sp" />
+		<TextView
+			android:id="@+id/kid_my_num"
+			android:text="圈人数"
+			android:layout_width="fill_parent"
+			android:layout_height="40dp"
+			android:layout_toRightOf="@id/kid_my_nickname"
+			android:textSize="20sp" />
+	</LinearLayout>
+	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+</RelativeLayout>

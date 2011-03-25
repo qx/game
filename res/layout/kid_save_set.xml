@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="80dp"
+	android:background="@drawable/list_background">
+	<!-- ====================大头照===================== -->
+	<ImageView
+		android:id="@+id/kid_save_head"
+		android:layout_width="50dp"
+		android:layout_height="80dp"
+		android:src="@drawable/i4" />
+
+	<!-- ========================================== -->
+	<LinearLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		android:id="@+id/kid_save_layout1"
+		android:orientation="vertical"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_toRightOf="@id/kid_save_head">
+		<!-- ============昵称==============圈人数======. -->
+		<RelativeLayout
+			xmlns:android="http://schemas.android.com/apk/res/android"
+			android:layout_width="170dp"
+			android:layout_height="20dp">
+			<TextView
+				android:id="@+id/kid_save_nickname"
+				android:text="昵称"
+				android:layout_width="120dp"
+				android:layout_height="20dp" />
+			<TextView
+				android:id="@+id/kid_save_num"
+				android:text="圈人数"
+				android:layout_width="50dp"
+				android:layout_height="20dp"
+				android:layout_toRightOf="@id/kid_save_nickname" />
+		</RelativeLayout>
+
+		<!-- ==================职业  救人数=============== -->
+		<RelativeLayout
+			xmlns:android="http://schemas.android.com/apk/res/android"
+			android:layout_width="170dp"
+			android:layout_height="20dp">
+			<TextView
+				android:id="@+id/kid_save_career"
+				android:text="职业"
+				android:layout_width="120dp"
+				android:layout_height="20dp" />
+			<TextView
+				android:id="@+id/kid_save_num"
+				android:text="救人数"
+				android:layout_width="50dp"
+				android:layout_height="20dp"
+				android:layout_toRightOf="@id/kid_save_career" />
+		</RelativeLayout>
+		<!-- ===========等级        折磨数=========================== -->
+		-->
+		<RelativeLayout
+			xmlns:android="http://schemas.android.com/apk/res/android"
+			android:layout_width="170dp"
+			android:layout_height="20dp">
+			<TextView
+				android:id="@+id/kid_save_level"
+				android:text="等级"
+				android:layout_width="120dp"
+				android:layout_height="20dp" />
+			<TextView
+				android:id="@+id/kid_save_kid"
+				android:text="折磨数"
+				android:layout_width="50dp"
+				android:layout_height="20dp"
+				android:layout_toRightOf="@id/kid_save_level" />
+		</RelativeLayout>
+		<!-- ==============绑匪昵称    金钱================== -->
+		<RelativeLayout
+			xmlns:android="http://schemas.android.com/apk/res/android"
+			android:layout_width="170dp"
+			android:layout_height="20dp">
+			<TextView
+				android:id="@+id/kid_save_name"
+				android:text="绑匪昵称"
+				android:layout_width="120dp"
+				android:layout_height="20dp" />
+			<TextView
+				android:id="@+id/kid_save_money"
+				android:text="金钱"
+				android:layout_width="50dp"
+				android:layout_height="20dp"
+				android:layout_toRightOf="@id/kid_save_name" />
+		</RelativeLayout>
+	</LinearLayout>
+	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<!-- ================拯救(按)============================= -->
+	<ImageButton
+		android:id="@+id/kid_save_done"
+		android:layout_toRightOf="@id/kid_save_layout1"
+		android:layout_width="100dp"
+		android:layout_height="80dp"
+		android:src="@drawable/i5" />
+</RelativeLayout>
