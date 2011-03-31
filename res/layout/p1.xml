@@ -1,314 +1,361 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
 	xmlns:android="http://schemas.android.com/apk/res/android"
-	android:orientation="vertical"
 	android:layout_width="fill_parent"
 	android:layout_height="wrap_content"
-	android:background="@drawable/all">
+	android:background="@drawable/p1_bg_01">
 
 	<!-- properties -->
 	<RelativeLayout
 		xmlns:android="http://schemas.android.com/apk/res/android"
 		android:layout_width="fill_parent"
-		android:layout_height="80dp">
+		android:layout_height="71dp">
 		<!-- 金钱tag-->
 		<TextView
-			android:id="@+id/money_tag"
-			android:layout_width="60dp"
-			android:layout_height="20dp"
-			android:gravity="center"
-			android:text="金钱" />
-		<!-- 金钱数值 -->
-		<TextView
-			android:id="@+id/money_num"
+			android:id="@+id/p1_tv_01"
 			android:layout_width="100dp"
-			android:layout_height="20dp"
-			android:layout_toRightOf="@id/money_tag"
-			android:gravity="center"
-			android:text="$23423" />
+			android:layout_height="18dp"
+			android:layout_marginLeft="20dp"
+			android:text="19,66,4500000"
+			android:paddingTop="5dp"
+			android:gravity="center_horizontal"
+			android:paddingBottom="0dp"
+			android:textSize="12sp"
+			android:textStyle="bold"
+			android:clickable="true"
+			 />
+		<!-- level -->
+		<TextView
+			android:id="@+id/p1_tv_02"
+			android:layout_width="22dp"
+			android:layout_height="17dp"
+			android:layout_toRightOf="@id/p1_tv_01"
+			android:layout_marginLeft="46dp"
+			android:paddingBottom="0dp"
+			android:paddingTop="4dp"
+			android:gravity="center_horizontal"
+			android:textSize="12sp"
+			android:textStyle="bold"
+			android:clickable="true"
+			android:text="8" />
 
 		<!-- 收钱倒计时 -->
 		<TextView
-			android:id="@+id/earntime_num"
+			android:id="@+id/p1_tv_03"
 			android:layout_width="100dp"
-			android:layout_height="20dp"
-			android:layout_below="@id/money_tag"
-			android:gravity="center"
-			android:text="收钱倒计时" />
-
-		<!-- 等级 -->
-		<TextView
-			android:id="@+id/level_num"
-			android:layout_width="60dp"
-			android:layout_height="20dp"
-			android:layout_below="@id/money_num"
-			android:layout_toRightOf="@id/earntime_num"
-			android:gravity="center"
-			android:text="等级" />
-		<!-- 经验 -->
+			android:layout_height="17dp"
+			android:layout_marginLeft="20dp"
+			android:layout_below="@id/p1_tv_01"
+			android:padding="0dp"
+			android:gravity="center_horizontal"
+			android:textSize="12sp"
+			android:textStyle="bold"
+			android:clickable="true"
+			android:text="00:00" />
 		<!-- 经验槽 -->
 		<ProgressBar
-			android:id="@+id/progress_exp"
+			android:id="@+id/p1_pb_01"
 			style="?android:attr/progressBarStyleHorizontal"
-			android:layout_width="100dp"
-			android:layout_height="20dp"
-			android:layout_toRightOf="@id/money_num"
-			android:layout_alignBottom="@id/money_num"
+			android:progressDrawable="@drawable/cus_pb"
+			android:padding="0dp"
+			android:paddingBottom="1dp"
+			android:layout_width="78dp"
+			android:layout_height="11dp"
+			android:layout_toRightOf="@id/p1_tv_02"
+			android:layout_marginLeft="4dp"
+			android:layout_marginTop="8dp"
 			android:max="100"
 			android:progress="35"
-			android:gravity="center"
-			android:text="经验槽" />
+			android:gravity="center_horizontal"></ProgressBar>
 		<!-- 经验值 -->
 		<TextView
-			android:id="@+id/exp_num"
-			android:layout_width="100dp"
-			android:layout_height="20dp"
-			android:layout_below="@id/money_num"
-			android:layout_toRightOf="@id/level_num"
-			android:gravity="center"
-			android:text="2012(经验)" />
+			android:id="@+id/p1_tv_04"
+			android:layout_width="78dp"
+			android:layout_height="15dp"
+			android:layout_below="@id/p1_pb_01"
+			android:layout_toRightOf="@id/p1_tv_03"
+			android:layout_marginLeft="74dp"
+			android:padding="0dp"
+			android:gravity="center_horizontal"
+			android:textSize="12sp"
+			android:textStyle="bold"
+			android:text="30/30" />
 		<!-- 帮助 -->
-		<TextView
-			android:id="@+id/help"
-			android:layout_width="60dp"
-			android:layout_height="20dp"
-			android:layout_toRightOf="@id/progress_exp"
-			android:layout_alignTop="@id/progress_exp"
-			android:layout_alignBottom="@id/exp_num"
+		<ImageButton
+			android:id="@+id/p1_ib_01"
+			android:background="@drawable/p1_ib_01"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_toRightOf="@id/p1_pb_01"
+			android:layout_marginLeft="13dp"
 			android:gravity="center"
-			android:text="帮助" />
+			android:clickable="true" />
 		<!-- 精力 -->
 		<TextView
-			android:id="@+id/energy_num"
-			android:layout_width="80dp"
-			android:layout_height="20dp"
-			android:layout_below="@id/earntime_num"
-			android:gravity="center"
-			android:text="精力" />
+			android:id="@+id/p1_tv_05"
+			android:layout_width="40dp"
+			android:layout_height="18.5dp"
+			android:layout_marginLeft="30dp"
+			android:layout_below="@id/p1_tv_03"
+			android:padding="0dp"
+			android:paddingTop="2dp"
+			android:gravity="center_horizontal"
+			android:textSize="12sp"
+			android:textStyle="bold"
+			android:clickable="true"
+			android:text="11/11" />
 		<!-- 体力 -->
 		<TextView
-			android:id="@+id/health_num"
-			android:layout_width="80dp"
-			android:layout_height="20dp"
-			android:layout_below="@id/level_num"
-			android:layout_toRightOf="@id/energy_num"
-			android:gravity="center"
-			android:text="体力" />
+			android:id="@+id/p1_tv_07"
+			android:layout_width="40dp"
+			android:layout_height="18.5dp"
+			android:layout_below="@id/p1_tv_03"
+			android:layout_toRightOf="@id/p1_tv_05"
+			android:layout_marginLeft="40dp"
+			android:padding="0dp"
+			android:paddingTop="2dp"
+			android:gravity="center_horizontal"
+			android:textSize="12sp"
+			android:textStyle="bold"
+			android:clickable="true"
+			android:text="11/11" />
 		<!-- 移动力 -->
 		<TextView
-			android:id="@+id/action_num"
-			android:layout_width="80dp"
-			android:layout_height="20dp"
-			android:layout_below="@id/level_num"
-			android:layout_toRightOf="@id/health_num"
-			android:gravity="center"
-			android:text="移动力" />
+			android:id="@+id/p1_tv_09"
+			android:layout_width="40dp"
+			android:layout_height="18.5dp"
+			android:layout_below="@id/p1_tv_04"
+			android:layout_toRightOf="@id/p1_tv_07"
+			android:layout_marginLeft="40dp"
+			android:padding="0dp"
+			android:paddingTop="2dp"
+			android:gravity="center_horizontal"
+			android:textSize="12sp"
+			android:textStyle="bold"
+			android:clickable="true"
+			android:text="11/11" />
 		<!-- 好友 -->
 		<TextView
-			android:id="@+id/friend_num"
-			android:layout_width="80dp"
-			android:layout_height="20dp"
-			android:layout_below="@id/level_num"
-			android:layout_toRightOf="@id/action_num"
+			android:id="@+id/p1_tv_11"
+			android:layout_width="30dp"
+			android:layout_height="37dp"
+			android:layout_below="@id/p1_tv_04"
+			android:layout_toRightOf="@id/p1_tv_09"
+			android:layout_marginLeft="40dp"
+			android:padding="0dp"
+			android:paddingTop="2dp"
 			android:gravity="center"
-			android:text="好友" />
+			android:textSize="12sp"
+			android:textStyle="bold"
+			android:clickable="true"
+			android:text="33" />
 		<!-- 精力恢复时间 -->
 		<TextView
-			android:id="@+id/energy_re_num"
-			android:layout_width="80dp"
-			android:layout_height="20dp"
-			android:layout_below="@id/energy_num"
-			android:gravity="center"
-			android:text="精力恢复时间" />
+			android:id="@+id/p1_tv_06"
+			android:layout_width="40dp"
+			android:layout_height="18.5dp"
+			android:layout_below="@id/p1_tv_05"
+			android:layout_marginLeft="30dp"
+			android:padding="0dp"
+			android:gravity="center_horizontal"
+			android:textSize="12sp"
+			android:textStyle="bold"
+			android:text="00:00" />
 
 		<!-- 体力恢复时间 -->
 		<TextView
-			android:id="@+id/health_re_num"
-			android:layout_width="80dp"
-			android:layout_height="20dp"
-			android:layout_below="@id/energy_num"
-			android:layout_toRightOf="@id/energy_re_num"
-			android:gravity="center"
-			android:text="体力恢复时间" />
+			android:id="@+id/p1_tv_08"
+			android:layout_width="40dp"
+			android:layout_height="18.5dp"
+			android:layout_below="@id/p1_tv_07"
+			android:layout_toRightOf="@id/p1_tv_06"
+			android:layout_marginLeft="40dp"
+			android:padding="0dp"
+			android:gravity="center_horizontal"
+			android:textSize="12sp"
+			android:textStyle="bold"
+			android:text="00:00" />
 		<!-- 行动力回复时间 -->
 		<TextView
-			android:id="@+id/action_re_num"
-			android:layout_width="80dp"
-			android:layout_height="20dp"
-			android:layout_below="@id/energy_num"
-			android:layout_toRightOf="@id/health_re_num"
-			android:gravity="center"
-			android:text="行动力恢复时间" />
-		<!-- 游戏名称tag -->
-		<TextView
-			android:id="@+id/game_name"
-			android:layout_width="80dp"
-			android:layout_height="20dp"
-			android:layout_below="@id/energy_num"
-			android:layout_toRightOf="@id/action_re_num"
-			android:gravity="center"
-			android:text="游戏名称" />
+			android:id="@+id/p1_tv_10"
+			android:layout_width="40dp"
+			android:layout_height="18.5dp"
+			android:layout_below="@id/p1_tv_09"
+			android:layout_toRightOf="@id/p1_tv_08"
+			android:layout_marginLeft="40dp"
+			android:padding="0dp"
+			android:gravity="center_horizontal"
+			android:textSize="12sp"
+			android:textStyle="bold"
+			android:text="00:00" />
 	</RelativeLayout>
 	<RelativeLayout
 		xmlns:android="http://schemas.android.com/apk/res/android"
-		android:layout_width="fill_parent"
-		android:layout_height="160dp">
-		<!-- 玩家头像 -->
-		<ImageView
-			android:background="#BDF09A"
-			android:id="@+id/player_img"
-			android:src="@drawable/player"
-			android:adjustViewBounds="true"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content" />
-		<TextView
-			android:id="@+id/group"
-			android:layout_width="80dp"
-			android:layout_height="53dp"
-			android:layout_toRightOf="@id/player_img"
-			android:gravity="center"
-			android:text="魏国" />
-		<TextView
-			android:id="@+id/nickname"
-			android:layout_width="80dp"
-			android:layout_height="53dp"
-			android:layout_toRightOf="@id/group"
-			android:gravity="center"
-			android:text="小兵张嘎" />
-		<TextView
-			android:id="@+id/level"
-			android:layout_width="160dp"
-			android:layout_height="53dp"
-			android:layout_toRightOf="@id/player_img"
-			android:layout_below="@id/group"
-			android:gravity="center"
-			android:text="80级" />
-		<Button
-			android:background="#4A8D25"
-			style="?android:attr/buttonStyleSmall"
-			android:id="@+id/rob"
-			android:layout_width="160dp"
-			android:layout_height="wrap_content"
-			android:layout_toRightOf="@id/player_img"
-			android:layout_below="@id/level"
-			android:layout_alignBottom="@id/player_img"
-			android:gravity="center"
-			android:text="抢地盘--&gt;31" />
-	</RelativeLayout>
-	<RelativeLayout
-		xmlns:android="http://schemas.android.com/apk/res/android"
-		android:layout_width="fill_parent"
-		android:layout_height="20dp">
-		<TextView
-			android:id="@+id/playerid"
-			android:layout_width="160dp"
-			android:layout_height="20dp"
-			android:layout_below="@id/player_img"
-			android:gravity="center"
-			android:text="5465456454" />
-		<TextView
-			android:id="@+id/invite"
-			android:clickable="true"
-			android:layout_width="100dp"
-			android:layout_height="20dp"
-			android:layout_toRightOf="@id/playerid"
-			android:layout_below="@id/player_img"
-			android:gravity="center"
-			android:textSize="15sp"
-			android:background="#015EBE"
-			android:text="拉人头--&gt;3" />
-	</RelativeLayout>
-	<TextView
-		android:id="@+id/adver"
-		android:layout_width="160dp"
-		android:layout_height="20dp"
-		android:layout_below="@id/playerid"
-		android:gravity="center"
-		android:text="广告招商" />
-	<!-- button -->
-	<!-- 技 圈 杀 -->
-	<RelativeLayout
-		xmlns:android="http://schemas.android.com/apk/res/android"
-		android:layout_width="fill_parent"
-		android:layout_height="60dp">
-		<ImageButton
-			android:id="@+id/skills"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:gravity="center"
-			android:src="@drawable/p1_new_18"
-			android:text="技-&gt;5" />
-		<ImageButton
-			android:id="@+id/kid"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_toRightOf="@id/skills"
-			android:src="@drawable/p1_new_20"
-			android:gravity="center"
-			android:text="圈-&gt;6" />
-		<ImageButton
-			android:id="@+id/kill"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_toRightOf="@id/kid"
-			android:src="@drawable/p1_new_22"
-			android:gravity="center"
-			android:text="杀-&gt;12" />
-	</RelativeLayout>
-	<!-- 装备  喊话  好友 -->
-	<RelativeLayout
-		xmlns:android="http://schemas.android.com/apk/res/android"
-		android:layout_width="fill_parent"
-		android:layout_height="60dp">
-		<Button
-			android:id="@+id/equi"
-			android:layout_width="106dp"
-			android:layout_height="60dp"
-			android:gravity="center"
-			android:text="装备-&gt;25" />
-		<Button
-			android:id="@+id/blog"
-			android:layout_width="106dp"
-			android:layout_height="60dp"
-			android:layout_toRightOf="@id/equi"
-			android:gravity="center"
-			android:text="喊话-&gt;14" />
-		<Button
-			android:id="@+id/friend"
-			android:layout_width="106dp"
-			android:layout_height="60dp"
-			android:layout_toRightOf="@id/blog"
-			android:gravity="center"
-			android:text="好友-&gt;16" />
-	</RelativeLayout>
-	<!-- 生意 大夫 钱庄 -->
-	<RelativeLayout
-		xmlns:android="http://schemas.android.com/apk/res/android"
-		android:layout_width="fill_parent"
-		android:layout_height="60dp">
-		<Button
-			android:id="@+id/business"
-			android:layout_width="106dp"
-			android:layout_height="60dp"
-			android:gravity="center"
-			android:text="生意-&gt;23" />
-		<Button
-			android:id="@+id/docter"
-			android:layout_width="106dp"
-			android:layout_height="60dp"
-			android:layout_toRightOf="@id/business"
-			android:gravity="center"
-			android:text="大夫-&gt;20" />
-		<Button
-			android:id="@+id/bank"
-			android:layout_width="106dp"
-			android:layout_height="60dp"
-			android:layout_toRightOf="@id/docter"
-			android:gravity="center"
-			android:text="钱庄-&gt;24" />
-	</RelativeLayout>
-	<TextView
 		android:layout_width="fill_parent"
 		android:layout_height="wrap_content"
-		android:text="跑马灯" />
-</LinearLayout>
+		android:layout_marginLeft="0dp"
+		android:layout_marginTop="72dp">
+		<ImageButton
+			android:id="@+id/p1_ib_02"
+			android:background="@drawable/p1_ib_02"
+			android:layout_width="100dp"
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="90dp"
+			android:layout_marginTop="12dp"
+			android:clickable="true"
+			 />
+		<TextView
+			android:id="@+id/p1_tv_15"
+			android:layout_width="110dp"
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="72dp"
+			android:layout_marginTop="148dp"
+			android:padding="0dp"
+			android:gravity="center_horizontal"
+			android:textSize="12sp"
+			android:textStyle="bold"
+			android:clickable="true"
+			android:text="44708869"
+		/>
+		<LinearLayout
+			xmlns:android="http://schemas.android.com/apk/res/android"
+			android:orientation="vertical"
+			android:layout_width="60dp"
+			android:layout_height="44dp"
+			android:layout_toRightOf="@id/p1_ib_02"
+			android:clickable="true"
+			android:layout_marginLeft="8dp"
+			android:layout_marginTop="27dp">
+			<TextView
+				android:id="@+id/p1_tv_12"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:padding="0dp"
+				android:textStyle="bold"
+				android:textSize="17sp"
+				android:gravity="center_horizontal"
+				android:textColor="#FF8000"
+				android:clickable="true"
+				android:text="张飞" />
+			<TextView
+				android:id="@+id/p1_tv_13"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:padding="0dp"
+				android:textStyle="bold"
+				android:textSize="17sp"
+				android:gravity="center_horizontal"
+				android:textColor="#FF8000"
+				android:clickable="true"
+				android:text="等级:28" />
+		</LinearLayout>
+		<ImageButton
+			android:id="@+id/p1_ib_03"
+			android:background="@drawable/p1_ib_03"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="99dp"
+			android:clickable="true"
+			android:focusable="true"
+			android:layout_marginLeft="194dp" />
+		<ImageButton
+			android:id="@+id/p1_ib_04"
+			android:background="@drawable/p1_ib_04"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="139dp"
+			android:clickable="true"
+			android:focusable="true"
+			android:layout_marginLeft="194dp" />
+	</RelativeLayout>
+	<ImageButton
+		android:id="@+id/p1_ib_05"
+		android:background="@drawable/p1_ib_05"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="9dp"
+		android:clickable="true"
+		android:layout_marginTop="299dp" />
+	<ImageButton
+		android:id="@+id/p1_ib_06"
+		android:background="@drawable/p1_ib_06"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="115dp"
+		android:clickable="true"
+		
+		android:layout_marginTop="299dp" />
+	<ImageButton
+		android:id="@+id/p1_ib_07"
+		android:background="@drawable/p1_ib_07"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="221dp"
+		android:clickable="true"
+		android:layout_marginTop="299dp" />
+	<ImageButton
+		android:id="@+id/p1_ib_08"
+		android:background="@drawable/p1_ib_08"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:clickable="true"
+		android:layout_marginLeft="9dp"
+		android:layout_marginTop="393dp" />
+	<ImageButton
+		android:id="@+id/p1_ib_09"
+		android:background="@drawable/p1_ib_09"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:clickable="true"
+		android:layout_marginLeft="115dp"
+		android:layout_marginTop="393dp" />
+	<ImageButton
+		android:id="@+id/p1_ib_10"
+		android:background="@drawable/p1_ib_10"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:clickable="true"
+		android:layout_marginLeft="221dp"
+		android:layout_marginTop="393dp" />
+	<ImageButton
+		android:id="@+id/p1_ib_11"
+		android:background="@drawable/p1_ib_11"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:clickable="true"
+		android:layout_marginLeft="9dp"
+		android:layout_marginTop="427dp" />
+	<ImageButton
+		android:id="@+id/p1_ib_12"
+		android:background="@drawable/p1_ib_12"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:clickable="true"
+		android:layout_marginLeft="115dp"
+		android:layout_marginTop="427dp" />
+	<ImageButton
+		android:id="@+id/p1_ib_13"
+		android:background="@drawable/p1_ib_13"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:clickable="true"
+		android:layout_marginLeft="221dp"
+		android:layout_marginTop="427dp" />
+	<TextView
+		android:id="@+id/p1_tv_14"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="0dp"
+		android:layout_marginTop="465dp"
+		android:layout_alignParentRight="true"
+		android:lines="1"
+		android:ellipsize="marquee"
+		android:fadingEdge="horizontal"
+		android:marqueeRepeatLimit="marquee_forever"
+		android:scrollHorizontally="true"
+		android:textColor="#ff4500"
+		android:focusable="true"
+		android:textSize="12sp"
+		android:textStyle="bold"
+		android:text="中新网杭州3月30日电 (记者 汪恩民 实习生 沈溦)随着日本核辐射事件逐渐升级，国家环保部日前发布消息称，在中国东南沿海浙江、广东等地检测到了极微量的人工放射性核素碘-131。" />
+</RelativeLayout>
