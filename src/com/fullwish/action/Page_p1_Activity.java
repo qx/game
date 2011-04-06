@@ -8,9 +8,14 @@ import android.view.View.OnClickListener;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.fullwish.base.User;
+import com.fullwish.util.ConnUtil;
+
 public class Page_p1_Activity extends Activity {
     private ImageButton qiangdipan;
+
     private TextView p1_tv_14;
+
     private ImageButton larentou;
 
     private ImageButton ji;
@@ -30,6 +35,7 @@ public class Page_p1_Activity extends Activity {
     private ImageButton dafu;
 
     private ImageButton qianzhuang;
+    private User user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,8 +52,8 @@ public class Page_p1_Activity extends Activity {
         shengyi = (ImageButton) this.findViewById(R.id.p1_ib_11);
         dafu = (ImageButton) this.findViewById(R.id.p1_ib_12);
         qianzhuang = (ImageButton) this.findViewById(R.id.p1_ib_13);
-        p1_tv_14= (TextView) this.findViewById(R.id.p1_tv_14);  
-        p1_tv_14.setSelected(true);  // Set focus to the textview
+        p1_tv_14 = (TextView) this.findViewById(R.id.p1_tv_14);
+        p1_tv_14.setSelected(true); // Set focus to the textview
         OnClickListener clicklistener = new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -55,7 +61,7 @@ public class Page_p1_Activity extends Activity {
                 case R.id.p1_ib_03:/** Start a new Activity MyCards.java */
                     // Intent intent = new Intent(this, MyCards.class);
                     // this.startActivity(intent);
-                    
+
                     Intent intent31 = new Intent(Page_p1_Activity.this,
                             Page_p31_Activity.class);
                     startActivityForResult(intent31, 1);
@@ -135,5 +141,9 @@ public class Page_p1_Activity extends Activity {
         shengyi.setOnClickListener(clicklistener);
         dafu.setOnClickListener(clicklistener);
         qianzhuang.setOnClickListener(clicklistener);
+        /* 初始化界面 */
+        user=ConnUtil.getUser(); // 获得数据库资源
+        
+
     }
 }
