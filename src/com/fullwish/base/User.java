@@ -3,6 +3,8 @@
  */
 package com.fullwish.base;
 
+import java.io.Serializable;
+
 /**
  * @author fullwish
  *
@@ -12,7 +14,12 @@ package com.fullwish.base;
  */
 
 
-public class User {
+public class User implements Serializable {
+    /**
+     * 
+     */
+    private static final long serialVersionUID = 1625526557511499762L;
+
     /* °ó¶¨µÄgoogleÕËºÅ */
     private String user_google;
 
