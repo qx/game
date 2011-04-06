@@ -15,6 +15,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.fullwish.base.User;
+import com.fullwish.util.ConnUtil;
 
 public class Page_p1_Activity extends Activity {
     private ImageButton qiangdipan;
@@ -40,7 +41,7 @@ public class Page_p1_Activity extends Activity {
     private ImageButton dafu;
 
     private ImageButton qianzhuang;
-    
+
     private RelativeLayout adapter;
 
     private RelativeLayout background;
@@ -52,12 +53,12 @@ public class Page_p1_Activity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.p1);
 
-/*         初始化界面 
-        user = ConnUtil.getUser("http://127.0.0.1:8080/p1");// 查
-        ConnUtil.addUser(user,"http//127.0.0.1/p1_");// 增
-        ConnUtil.updateUser(user,"http//127.0.0.1/p1_");           //改
-         Conn           //删
-*/
+        /* 初始化界面 */
+        user = ConnUtil.getUser("mygoogle@gmail.com","http://127.0.0.1:8080/p1_get");// 查
+//        ConnUtil.addUser("http//127.0.0.1/p1_add");// 增
+//        ConnUtil.updateUser(user, "http//127.0.0.1/p1_update"); // 改
+//        ConnUtil.deleteUserInfo(user, "http//127.0.0.1/p1_delete"); // 删
+
         qiangdipan = (ImageButton) this.findViewById(R.id.p1_ib_02);
         larentou = (ImageButton) this.findViewById(R.id.p1_ib_03);
         ji = (ImageButton) this.findViewById(R.id.p1_ib_04);
@@ -72,7 +73,7 @@ public class Page_p1_Activity extends Activity {
         p1_tv_14 = (TextView) this.findViewById(R.id.p1_tv_14);
         adapter = (RelativeLayout) this.findViewById(R.id.adapter);
         background = (RelativeLayout) this.findViewById(R.id.background);
-        
+
         DisplayMetrics metrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(metrics);
         // crop png
