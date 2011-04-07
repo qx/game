@@ -4,13 +4,23 @@
 package com.fullwish.util;
 
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
+import org.apache.http.Header;
+import org.apache.http.HttpEntity;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONObject;
+
+import android.util.Log;
 
 /**
  * @author fullwish 连接服务器
@@ -55,23 +65,25 @@ public class ConnUtil {
      *            paht
      */
     public static void addUser(JSONObject user, String path) {
-        // 先判断是否有这个用户
-        // 没有则写入,
-        // 有则返回提示
         DefaultHttpClient httpClient = new DefaultHttpClient();
         HttpPost httpPost = new HttpPost(PATH.BASE + "/p1_add"
-                + "&User_google=abcdefg");
-        /*
-         * if (cookie != null) { //
-         * httpClient.setCookieStore(LoginJsonUtil.cookie); List nameValuePair =
-         * new ArrayList(2); nameValuePair.add(new BasicNameValuePair("uid",
-         * uid)); nameValuePair.add(new
-         * BasicNameValuePair("subscriptionslist[pageindex]",
-         * subscriptionslist_pageindex)); nameValuePair.add(new
-         * BasicNameValuePair("subscriptionslist[recordlimit]",
-         * subscriptionslist_recordlimit)); httpPost.setEntity(new
-         * UrlEncodedFormEntity(nameValuePair)); }
-         */
+                + "&user_google=abcdefg");
+        List nameValuePair = new ArrayList(); 
+        JSONObject jsonObject = new JSONObject(); 
+        JSONObject jsonObject2 = new JSONObject();
+        try {
+            jsonObject.put("user_google", user.getString("user_google"));
+            JSONObject userinfo = null;
+            jsonObject.put("user", user.getString("user"));
+            //        jsonObject2.put("userbean", jsonObject);
+//            nameValuePair.add(new BasicNameValuePair("jsonString", jsonObject
+//                    .toString()));
+            nameValuePair.add(new BasicNameValuePair("user_json", jsonObject.toString()));//发送到服务器的user
+            httpPost.setEntity(new UrlEncodedFormEntity(nameValuePair));
+            //     httpPost.setEntity(new UrlEncodedFormEntity(user.getString("User_google")));
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
 
     }
 
