@@ -1,5 +1,8 @@
 package com.fullwish.action;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -14,8 +17,8 @@ import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.fullwish.base.User;
 import com.fullwish.util.ConnUtil;
+import com.fullwish.util.PATH;
 
 public class Page_p1_Activity extends Activity {
     private ImageButton qiangdipan;
@@ -46,7 +49,7 @@ public class Page_p1_Activity extends Activity {
 
     private RelativeLayout background;
 
-    private User user;
+    private JSONObject user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,11 +57,18 @@ public class Page_p1_Activity extends Activity {
         setContentView(R.layout.p1);
 
         /* 初始化界面 */
-        user = ConnUtil.getUser("mygoogle@gmail.com","http://127.0.0.1:8080/p1_get");// 查
-//        ConnUtil.addUser("http//127.0.0.1/p1_add");// 增
-//        ConnUtil.updateUser(user, "http//127.0.0.1/p1_update"); // 改
-//        ConnUtil.deleteUserInfo(user, "http//127.0.0.1/p1_delete"); // 删
-
+      //  ConnUtil.addUser("BAST_PATH/p1_add");// 增
+        // ConnUtil.deleteUserInfo(user, "http//127.0.0.1/p1_delete"); // 删
+        // ConnUtil.updateUser(user, "http//127.0.0.1/p1_update"); // 改
+        user = ConnUtil.searchUser("mygoogle@gmail.com",
+               PATH.BASE+"/p1_search");// 查
+        try {
+            JSONObject jsob1 = (JSONObject) user.get("user");
+            System.out.println(jsob1);
+        } catch (JSONException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
         qiangdipan = (ImageButton) this.findViewById(R.id.p1_ib_02);
         larentou = (ImageButton) this.findViewById(R.id.p1_ib_03);
         ji = (ImageButton) this.findViewById(R.id.p1_ib_04);

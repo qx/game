@@ -8,36 +8,92 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import android.net.UrlQuerySanitizer;
-
-import com.fullwish.base.User;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.json.JSONObject;
 
 /**
- * @author fullwish
- *连接服务器
+ * @author fullwish 连接服务器
  */
 public class ConnUtil {
-    private final static String DEBUG_TAG="ConnUtil";
-    private User user;
+
     /**
-     * 获取User
+     * 查询用户
+     * 
+     * @param user_google
+     *            用户标识ID
+     * @param basepath
+     *            路径
      */
-    public static User getUser(String user_google,String basepath) {
-     String new_path=basepath+"?User_google="+user_google;
-     try {
-        URL url = new URL(new_path);
-        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-        conn.setRequestMethod("GET");
-        conn.setConnectTimeout(6 * 1000);
-        if (conn.getResponseCode() == 200) {
-            InputStream inStream = conn.getInputStream();
-            byte[] data = readStream(inStream);
-            System.out.println(data.toString());
+    public static JSONObject searchUser(String user_google, String basepath) {
+        String new_path = basepath + "?User_google=" + user_google;
+        JSONObject jsob = null;
+        try {
+            URL url = new URL(new_path);
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestMethod("GET");
+            conn.setConnectTimeout(6 * 1000);
+            if (conn.getResponseCode() == 200) {
+                InputStream inStream = conn.getInputStream();
+                byte[] data = readStream(inStream);
+                String jsonString = new String(data);
+                jsob = new JSONObject(jsonString);
+                inStream.close();
+                conn.disconnect();
+            }
+        } catch (Exception e) {
         }
-    } catch (Exception e) {
-        // TODO: handle exception
+        return jsob;
     }
-        return null;
+
+    /**
+     * 增加用户
+     * 
+     * @param user
+     *            JSONObject
+     * @param string
+     *            paht
+     */
+    public static void addUser(JSONObject user, String path) {
+        // 先判断是否有这个用户
+        // 没有则写入,
+        // 有则返回提示
+        DefaultHttpClient httpClient = new DefaultHttpClient();
+        HttpPost httpPost = new HttpPost(PATH.BASE + "/p1_add"
+                + "&User_google=abcdefg");
+        /*
+         * if (cookie != null) { //
+         * httpClient.setCookieStore(LoginJsonUtil.cookie); List nameValuePair =
+         * new ArrayList(2); nameValuePair.add(new BasicNameValuePair("uid",
+         * uid)); nameValuePair.add(new
+         * BasicNameValuePair("subscriptionslist[pageindex]",
+         * subscriptionslist_pageindex)); nameValuePair.add(new
+         * BasicNameValuePair("subscriptionslist[recordlimit]",
+         * subscriptionslist_recordlimit)); httpPost.setEntity(new
+         * UrlEncodedFormEntity(nameValuePair)); }
+         */
+
+    }
+
+    /**
+     * @param user
+     * @param string
+     */
+    public static void updateUser(JSONObject user, String path) {
+        // 查询是否有
+        // 没有则返回
+        // 如果有,更改JSONobject,
+
+    }
+
+    /**
+     * @param user
+     * @param string
+     */
+    public static void deleteUserInfo(JSONObject user, String path) {
+        // 查询是否非空
+        // 删除用户user_google
+        
     }
 
     /**
@@ -55,53 +111,6 @@ public class ConnUtil {
         inStream.close();
         return ba_outStream.toByteArray();
 
-    }
-
-    /**
-     * 发送user数据
-     */
-    public static void setUser(User user,String path) {
-      //  DefaultHttpClient httpClient = new DefaultHttpClient();
-       // HttpPost httpPost = new HttpPost(path+"&User_google="+user_google); 
-/*            if (cookie != null) { 
-               // httpClient.setCookieStore(LoginJsonUtil.cookie); 
-                List nameValuePair = new ArrayList(2);
-                nameValuePair.add(new BasicNameValuePair("uid", 
-                        uid)); 
-                nameValuePair.add(new BasicNameValuePair("subscriptionslist[pageindex]", 
-                        subscriptionslist_pageindex)); 
-                nameValuePair.add(new BasicNameValuePair("subscriptionslist[recordlimit]", 
-                        subscriptionslist_recordlimit));
-                httpPost.setEntity(new UrlEncodedFormEntity(nameValuePair));
-            }*/
-        
-    }
-
-    /**
-     * @param user
-     * @param string
-     */
-    public static void addUser(User user, String path) {
-        // TODO Auto-generated method stub
-        
-    }
-
-    /**
-     * @param user
-     * @param string
-     */
-    public static void updateUser(User user, String path) {
-        // TODO Auto-generated method stub
-        
-    }
-
-    /**
-     * @param user
-     * @param string
-     */
-    public static void deleteUserInfo(User user, String path) {
-        // TODO Auto-generated method stub
-        
     }
 
 }

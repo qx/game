@@ -5,6 +5,8 @@ package com.fullwish.base;
 
 import java.io.Serializable;
 
+import org.json.JSONObject;
+
 /**
  * @author fullwish
  *
@@ -19,6 +21,8 @@ public class User implements Serializable {
      * 
      */
     private static final long serialVersionUID = 1625526557511499762L;
+    
+    private JSONObject json_user;
 
     /* °ó¶¨µÄgoogleÕËºÅ */
     private String user_google;
@@ -107,6 +111,9 @@ public class User implements Serializable {
         user_google = userGoogle;
         user_nickname = userNickname;
         user_level = userLevel;
+    }
+    public User(JSONObject json_user) {
+        
     }
 
     public void setUser_google(String userGoogle) {
@@ -313,6 +320,20 @@ public class User implements Serializable {
         } else if (!user_google.equals(other.user_google))
             return false;
         return true;
+    }
+
+    /**
+     * @param json_user the json_user to set
+     */
+    public void setJson_user(JSONObject json_user) {
+        this.json_user = json_user;
+    }
+
+    /**
+     * @return the json_user
+     */
+    public JSONObject getJson_user() {
+        return json_user;
     }
 }
 
