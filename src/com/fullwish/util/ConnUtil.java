@@ -4,36 +4,33 @@
 package com.fullwish.util;
 
 import java.io.ByteArrayOutputStream;
-import java.io.IOException;
 import java.io.InputStream;
-import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.http.Header;
-import org.apache.http.HttpEntity;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONObject;
 
-import android.util.Log;
-
 /**
- * @author fullwish Á¬½Ó·şÎñÆ÷
+ * @author fullwish oyqx è¿æ¥æœåŠ¡å™¨,å‘é€å®¢æˆ·ç«¯æ•°æ®,ä»¥åŠæ¥å—æœåŠ¡å™¨æ•°æ®
  */
 public class ConnUtil {
 
     /**
-     * ²éÑ¯ÓÃ»§
+     * @author oyqx
+     * @param String
+     *            user_email ç”¨æˆ·å(é‚®ç®±,å”¯ä¸€)
+     * @param String
+     *            user_password ç”¨æˆ·å¯†ç (MD5åŠ å¯†)
+     * @param String
+     *            basepath æœåŠ¡å™¨åŸºæœ¬è®¿é—®è·¯å¾„BASE="http://192.168.2.103:8080";
+     * @return JSONObject ç”±æœåŠ¡å™¨ä¼ æ¥çš„json,æ„å»ºæˆJSONObject
      * 
-     * @param user_google
-     *            ÓÃ»§±êÊ¶ID
-     * @param basepath
-     *            Â·¾¶
      */
     public static JSONObject searchUser(String user_google, String basepath) {
         String new_path = basepath + "?User_google=" + user_google;
@@ -57,7 +54,7 @@ public class ConnUtil {
     }
 
     /**
-     * Ôö¼ÓÓÃ»§
+     *@author oyqx
      * 
      * @param user
      *            JSONObject
@@ -68,19 +65,21 @@ public class ConnUtil {
         DefaultHttpClient httpClient = new DefaultHttpClient();
         HttpPost httpPost = new HttpPost(PATH.BASE + "/p1_add"
                 + "&user_google=abcdefg");
-        List nameValuePair = new ArrayList(); 
-        JSONObject jsonObject = new JSONObject(); 
+        List nameValuePair = new ArrayList();
+        JSONObject jsonObject = new JSONObject();
         JSONObject jsonObject2 = new JSONObject();
         try {
             jsonObject.put("user_google", user.getString("user_google"));
             JSONObject userinfo = null;
             jsonObject.put("user", user.getString("user"));
-            //        jsonObject2.put("userbean", jsonObject);
-//            nameValuePair.add(new BasicNameValuePair("jsonString", jsonObject
-//                    .toString()));
-            nameValuePair.add(new BasicNameValuePair("user_json", jsonObject.toString()));//·¢ËÍµ½·şÎñÆ÷µÄuser
+            // jsonObject2.put("userbean", jsonObject);
+            // nameValuePair.add(new BasicNameValuePair("jsonString", jsonObject
+            // .toString()));
+            nameValuePair.add(new BasicNameValuePair("user_json", jsonObject
+                    .toString()));// ï¿½ï¿½ï¿½Íµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½user
             httpPost.setEntity(new UrlEncodedFormEntity(nameValuePair));
-            //     httpPost.setEntity(new UrlEncodedFormEntity(user.getString("User_google")));
+            // httpPost.setEntity(new
+            // UrlEncodedFormEntity(user.getString("User_google")));
         } catch (Exception e) {
             // TODO: handle exception
         }
@@ -92,9 +91,9 @@ public class ConnUtil {
      * @param string
      */
     public static void updateUser(JSONObject user, String path) {
-        // ²éÑ¯ÊÇ·ñÓĞ
-        // Ã»ÓĞÔò·µ»Ø
-        // Èç¹ûÓĞ,¸ü¸ÄJSONobject,
+        // ï¿½ï¿½Ñ¯ï¿½Ç·ï¿½ï¿½ï¿½
+        // Ã»ï¿½ï¿½ï¿½ò·µ»ï¿½
+        // ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½JSONobject,
 
     }
 
@@ -103,9 +102,9 @@ public class ConnUtil {
      * @param string
      */
     public static void deleteUserInfo(JSONObject user, String path) {
-        // ²éÑ¯ÊÇ·ñ·Ç¿Õ
-        // É¾³ıÓÃ»§user_google
-        
+        // ï¿½ï¿½Ñ¯ï¿½Ç·ï¿½Ç¿ï¿½
+        // É¾ï¿½ï¿½ï¿½Ã»ï¿½user_google
+
     }
 
     /**

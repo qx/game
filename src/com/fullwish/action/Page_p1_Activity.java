@@ -60,11 +60,13 @@ public class Page_p1_Activity extends Activity {
       //  ConnUtil.addUser("BAST_PATH/p1_add");// 增
         // ConnUtil.deleteUserInfo(user, "http//127.0.0.1/p1_delete"); // 删
         // ConnUtil.updateUser(user, "http//127.0.0.1/p1_update"); // 改
-        user = ConnUtil.searchUser("mygoogle@gmail.com",
-               PATH.BASE+"/p1_search");// 查
+//        user = ConnUtil.searchUser("mygoogle@gmail.com",
+//               PATH.BASE+"/p1_search");// 查
         try {
-            JSONObject jsob1 = (JSONObject) user.get("user");
-            System.out.println(jsob1);
+          //  JSONObject jsob1 = (JSONObject) user.get("user");
+            JSONObject user= new JSONObject(
+            "{\"userGoogle\":\"zhangshan@gmail.com\",\"userNickname\":\"张飞很猛\",\"userLevel\":\"1\"}");
+            System.out.println(user);
         } catch (JSONException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
