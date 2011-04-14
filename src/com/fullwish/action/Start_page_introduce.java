@@ -1,12 +1,5 @@
 package com.fullwish.action;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.io.PrintWriter;
-import java.net.Socket;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -21,61 +14,48 @@ public class Start_page_introduce extends Activity {
 
     private Button introduce_exit;
 
-    private Bundle extras4;
+    private Bundle extras_introduce;
 
     private String content;
-    
-    private TextView textContent;//ÏÔÊ¾ÄÚÈİ
+
+    private TextView textContent;// æ˜¾ç¤ºå†…å®¹
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.start_page_introduce);
-        extras4 = this.getIntent().getExtras();
-        content = "×ğ¾´µÄ" + extras4.getString("êÇ³Æ") + ",ÄúºÃ,»¶Ó­À´µ½ÒÆ¶¯Èı¹ú:"
-                + "ÄúËùÑ¡ÔñµÄ¹ú¼ÒÊÇ" + extras4.getString("¹ú¼Ò") + ",Ö°ÒµÊÇ,"
-                + extras4.getString("Ö°Òµ");
-        
-        textContent=(TextView)this.findViewById(R.id.introduce_1);
+        extras_introduce = this.getIntent().getExtras();
+        content = "å°Šæ•¬çš„" + extras_introduce.getString("user_nickname") + ",æ‚¨å¥½,æ¬¢è¿æ¥åˆ°ç§»åŠ¨ä¸‰å›½:" + "æ‚¨æ‰€é€‰æ‹©çš„å›½å®¶æ˜¯"
+                + extras_introduce.getString("user_country") + ",èŒä¸šæ˜¯," + extras_introduce.getString("user_carrer");
+        textContent = (TextView) this.findViewById(R.id.introduce_1);
         introduce_start = (Button) this.findViewById(R.id.introduce_2);
         introduce_exit = (Button) this.findViewById(R.id.introduce_3);
-        
+
         textContent.setText(content);
-        
+
         introduce_start.setOnClickListener(new OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                                
-                Intent introduce = new Intent(Start_page_introduce.this,
-                        Page_p1_Activity.class);
-           /*     Socket socket = null;
-                String message = mEditText.getText().toString() + "\r\n"; 
-                    //´´½¨Socket
-                    socket = new Socket("192.168.1.110",54321); 
-                    //Ïò·şÎñÆ÷·¢ËÍÏûÏ¢
-                    PrintWriter out = new PrintWriter( new BufferedWriter( new OutputStreamWriter(socket.getOutputStream())),true);      
-                    out.println(message); 
-                    
-                    //½ÓÊÕÀ´×Ô·şÎñÆ÷µÄÏûÏ¢
-                    BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream())); 
-                    String msg = br.readLine(); 
-                    
-                    if ( msg != null )
-                    {
-                        mTextView.setText(msg);
-                    }
-                    else
-                    {
-                        mTextView.setText("Êı¾İ´íÎó!");
-                    }
-                    //¹Ø±ÕÁ÷
-                    out.close();
-                    br.close();
-                    //¹Ø±ÕSocket
-                    socket.close(); 
-                */
-                
+
+                Intent introduce = new Intent(Start_page_introduce.this, Page_p1_Activity.class);
+                /*
+                 * Socket socket = null; String message =
+                 * mEditText.getText().toString() + "\r\n"; //åˆ›å»ºSocket socket =
+                 * new Socket("192.168.1.110",54321); //å‘æœåŠ¡å™¨å‘é€æ¶ˆæ¯ PrintWriter out
+                 * = new PrintWriter( new BufferedWriter( new
+                 * OutputStreamWriter(socket.getOutputStream())),true);
+                 * out.println(message);
+                 * 
+                 * //æ¥æ”¶æ¥è‡ªæœåŠ¡å™¨çš„æ¶ˆæ¯ BufferedReader br = new BufferedReader(new
+                 * InputStreamReader(socket.getInputStream())); String msg =
+                 * br.readLine();
+                 * 
+                 * if ( msg != null ) { mTextView.setText(msg); } else {
+                 * mTextView.setText("æ•°æ®é”™è¯¯!"); } //å…³é—­æµ out.close(); br.close();
+                 * //å…³é—­Socket socket.close();
+                 */
+
                 startActivityForResult(introduce, 1);
             }
         });
@@ -90,9 +70,8 @@ public class Start_page_introduce extends Activity {
         // ////////////////////////////////
         Toast.makeText(
                 this,
-                extras4.getString("¹ú¼Ò") + ":   " + extras4.getString("Ö°Òµ")
-                        + ":  " + extras4.getString("êÇ³Æ"), Toast.LENGTH_SHORT)
-                .show();// test
+                extras_introduce.getString("å›½å®¶") + ":   " + extras_introduce.getString("èŒä¸š") + ":  "
+                        + extras_introduce.getString("æ˜µç§°"), Toast.LENGTH_SHORT).show();// test
         // ////////////////test//////////////////////////////////////////////////
 
     }

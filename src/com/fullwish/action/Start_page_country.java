@@ -1,10 +1,5 @@
 package com.fullwish.action;
 
-import java.util.HashMap;
-import java.util.Map;
-
-import com.fullwish.other.Choose;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -26,60 +21,61 @@ public class Start_page_country extends Activity {
 
     private RadioButton m_Radio1, m_Radio2, m_Radio3;
 
-    private Boolean isChoose;
-  //  private Map user;
-    private Bundle extras;
-    //private String country_choose;
+    private Boolean isChoose = false;
+
+    // private Map user;
+    private Bundle extras_country;
+
+    // private String country_choose;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.start_page_country);
-            
-       // extras=new HashMap<String, String>();
-        extras=new Bundle();
-        
+
+        // extras_country=new HashMap<String, String>();
+        // extras_country = new Bundle();
+        extras_country = this.getIntent().getExtras();
+
         country_return = (Button) this.findViewById(R.id.country_8);
         country_next = (Button) this.findViewById(R.id.country_9);
         /**
-         * »ñµÃRadioGroup¶ÔÏó »ñµÃ4¸öRadioButton¶ÔÏó
+         * è·å¾—RadioGroupå¯¹è±¡ è·å¾—4ä¸ªRadioButtonå¯¹è±¡
          */
         m_RadioGroup = (RadioGroup) findViewById(R.id.RadioGroup01);
         m_Radio1 = (RadioButton) findViewById(R.id.country_2);
         m_Radio2 = (RadioButton) findViewById(R.id.country_4);
         m_Radio3 = (RadioButton) findViewById(R.id.country_6);
 
-        /* ÉèÖÃÊÂ¼ş¼àÌı */
-        m_RadioGroup
-                .setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-                    @Override
-                    public void onCheckedChanged(RadioGroup group, int checkedId) {
-                        // »ñÈ¡Ñ¡ÔñµÄÊı¾İ,²¢½«Æä·¢ËÍ¸ø·şÎñÆ÷(²âÊÔ)
-                        if (checkedId == m_Radio1.getId()) {
-                            extras.putString("¹ú¼Ò", "Êñ¹ú");
-                            isChoose = true;
-                        } else if (checkedId == m_Radio2.getId()) {
-                            extras.putString("¹ú¼Ò", "Îº¹ú");
-                            isChoose = true;
-                        } else if (checkedId == m_Radio3.getId()) {
-                            extras.putString("¹ú¼Ò", "Îâ¹ú");
-                            isChoose =true;
-                        } 
-                    }
-                });
-        
-            m_RadioGroup.getCheckedRadioButtonId();
+        /* è®¾ç½®äº‹ä»¶ç›‘å¬ */
+        m_RadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                // è·å–é€‰æ‹©çš„æ•°æ®,å¹¶å°†å…¶å‘é€ç»™æœåŠ¡å™¨(æµ‹è¯•)
+                if (checkedId == m_Radio1.getId()) {
+                    extras_country.putString("user_country", "èœ€å›½");
+                    isChoose = true;
+                } else if (checkedId == m_Radio2.getId()) {
+                    extras_country.putString("user_country", "é­å›½");
+                    isChoose = true;
+                } else if (checkedId == m_Radio3.getId()) {
+                    extras_country.putString("user_country", "å´å›½");
+                    isChoose = true;
+                }
+            }
+        });
+
+        m_RadioGroup.getCheckedRadioButtonId();
         country_next.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (isChoose = true) {
-                    
-                    Intent career = new Intent(Start_page_country.this,
-                            Start_page_career.class);
-                    career.putExtras(extras);
+                if (isChoose == true) {
+
+                    Intent career = new Intent(Start_page_country.this, Start_page_career.class);
+                    career.putExtras(extras_country);
                     startActivityForResult(career, 1);
                 } else {
-                    DisplayToast("ÇëÄúÑ¡Ôñ¹ú¼Ò");
+                    DisplayToast("è¯·æ‚¨é€‰æ‹©å›½å®¶");
                 }
             }
         });
@@ -92,12 +88,12 @@ public class Start_page_country extends Activity {
         });
     }
 
-    /* ÏÔÊ¾Toast */
+    /* æ˜¾ç¤ºToast */
     public void DisplayToast(String str) {
         Toast toast = Toast.makeText(this, str, Toast.LENGTH_LONG);
-        // ÉèÖÃtoastÏÔÊ¾µÄÎ»ÖÃ
+        // è®¾ç½®toastæ˜¾ç¤ºçš„ä½ç½®
         toast.setGravity(Gravity.TOP, 0, 220);
-        // ÏÔÊ¾¸ÃToast
+        // æ˜¾ç¤ºè¯¥Toast
         toast.show();
     }
 }

@@ -25,6 +25,21 @@ import org.json.JSONObject;
  */
 public class ConnUtil {
     private static String ssid;
+    private static String user;
+
+    /**
+     * @param user the user to set
+     */
+    public static void setUser(String user) {
+        ConnUtil.user = user;
+    }
+
+    /**
+     * @return the user
+     */
+    public static String getUser() {
+        return user;
+    }
 
     /**
      * @param ssid
@@ -152,6 +167,8 @@ public class ConnUtil {
              */
             ConnUtil.setSsid(new JSONObject(jsob.get("user_response")
                     .toString()).getString("ssid"));
+            ConnUtil.setUser(new JSONObject(jsob.get("user_response")
+                    .toString()).getString("user"));
             if (new JSONObject(jsob.get("user_response").toString()).getString(
                     "user").equals(username)) {
                 ispass = true;

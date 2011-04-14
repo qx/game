@@ -14,11 +14,11 @@ import android.widget.Toast;
  * android:id="@+id/nickname_3"
 android:layout_width="99px"
 android:layout_height="wrap_content"
-android:text="·µ»ØÉÏÒ»²½"
+android:text="è¿”å›ä¸Šä¸€æ­¥"
 android:id="@+id/nickname_4"
 android:layout_width="wrap_content"
 android:layout_height="wrap_content"
-android:text="ÏÂÒ»²½"
+android:text="ä¸‹ä¸€æ­¥"
  */
 public class Start_page_nickname  extends Activity {
 	private Button nickname_next;
@@ -42,7 +42,7 @@ public class Start_page_nickname  extends Activity {
 				Intent introduce = new Intent(Start_page_nickname.this,
 						Start_page_introduce.class);
 				content=nickname.getEditableText().toString();
-				extras3.putString("êÇ³Æ", content);
+				extras3.putString("user_nickname", content);
 				introduce.putExtras(extras3);
 				startActivityForResult(introduce, 1);
 			}
@@ -53,7 +53,7 @@ public class Start_page_nickname  extends Activity {
 				finish();
 			}
 		});
-	      Toast.makeText(this, extras3.getString("¹ú¼Ò")+":   "+extras3.getString("Ö°Òµ"),
+	      Toast.makeText(this, extras3.getString("å›½å®¶")+":   "+extras3.getString("èŒä¸š"),
 	                Toast.LENGTH_SHORT).show();//test
 	}
 }

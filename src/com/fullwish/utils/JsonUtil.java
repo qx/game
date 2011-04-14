@@ -91,6 +91,7 @@ public class JsonUtil {
         return sb.toString();
     }
 
+    @SuppressWarnings("unchecked")
     public static String toJson(Object o) {
         if (o == null)
             return "null";
