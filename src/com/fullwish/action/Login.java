@@ -12,10 +12,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.fullwish.util.ConnUtil;
-import com.fullwish.util.JsonUtil;
-import com.fullwish.util.MD5;
-import com.fullwish.util.PATH;
+import com.fullwish.utils.ConnUtil;
+import com.fullwish.utils.JsonUtil;
+import com.fullwish.utils.PATH;
 
 public class Login extends Activity {
     private EditText login_account;
@@ -58,18 +57,25 @@ public class Login extends Activity {
                      * 获取用户名,密码
                      */
                     String username = login_account.getText().toString();
-                    String password = MD5.MD5Encode(login_password.getText().toString());
+                    String password = login_password.getText().toString();
                     /* 转化为json */
                     HashMap<String, String> user_map = new HashMap<String, String>();
                     user_map.put("user_email", username);
                     user_map.put("user_password", password);
-                    String user_string = JsonUtil.map2Json((Map)user_map);
+                    String user_string = JsonUtil.map2Json((Map) user_map);
                     Toast.makeText(Login.this, user_string, Toast.LENGTH_SHORT)
                             .show();
-                     ConnUtil.userLogin(user_string, PATH.BASE+PATH.LOGIN);
-                    // Intent intent1 = new Intent(Login.this,
-                    // Start_page_country.class);
-                    // startActivityForResult(intent1, 1);
+                    Boolean ispass = ConnUtil.userLogin(user_string, PATH.BASE
+                            + PATH.LOGIN);// 验证用户
+                    System.out.println(ConnUtil.getSsid());
+                    if (ispass) {
+                        Intent intent1 = new Intent(Login.this,
+                                Start_page_country.class);
+                        startActivityForResult(intent1, 1);
+                    } else {
+                        Toast.makeText(Login.this, "登录失败,请检查用户名或者密码",
+                                Toast.LENGTH_SHORT).show();
+                    }
                     break;
                 case R.id.login_register:
                     Intent intent2 = new Intent(Login.this, Register.class);

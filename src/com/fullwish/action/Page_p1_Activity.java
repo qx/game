@@ -17,8 +17,8 @@ import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.fullwish.util.ConnUtil;
-import com.fullwish.util.PATH;
+import com.fullwish.utils.ConnUtil;
+import com.fullwish.utils.PATH;
 
 public class Page_p1_Activity extends Activity {
     private ImageButton qiangdipan;
@@ -56,16 +56,16 @@ public class Page_p1_Activity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.p1);
 
-        /* ³õÊ¼»¯½çÃæ */
-      //  ConnUtil.addUser("BAST_PATH/p1_add");// Ôö
+        /* ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
+      //  ConnUtil.addUser("BAST_PATH/p1_add");// ï¿½ï¿½
         // ConnUtil.deleteUserInfo(user, "http//127.0.0.1/p1_delete"); // É¾
-        // ConnUtil.updateUser(user, "http//127.0.0.1/p1_update"); // ¸Ä
+        // ConnUtil.updateUser(user, "http//127.0.0.1/p1_update"); // ï¿½ï¿½
 //        user = ConnUtil.searchUser("mygoogle@gmail.com",
-//               PATH.BASE+"/p1_search");// ²é
+//               PATH.BASE+"/p1_search");// ï¿½ï¿½
         try {
           //  JSONObject jsob1 = (JSONObject) user.get("user");
             JSONObject user= new JSONObject(
-            "{\"userGoogle\":\"zhangshan@gmail.com\",\"userNickname\":\"ÕÅ·ÉºÜÃÍ\",\"userLevel\":\"1\"}");
+            "{\"userGoogle\":\"zhangshan@gmail.com\",\"userNickname\":\"ï¿½Å·Éºï¿½ï¿½ï¿½\",\"userLevel\":\"1\"}");
             System.out.println(user);
         } catch (JSONException e) {
             // TODO Auto-generated catch block
@@ -96,10 +96,10 @@ public class Page_p1_Activity extends Activity {
         int height = bitmapOrg.getHeight();
         int newWidth = 320;
         int newHeight = 0;
-        if (metrics.heightPixels == 533) {// 240DipÆÁÄ»+53,±³¾°²»²Ã¼ô
+        if (metrics.heightPixels == 533) {// 240Dipï¿½ï¿½Ä»+53,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã¼ï¿½
             newHeight = 533;
             adapter.setMinimumHeight(53);
-        } else if (metrics.heightPixels == 480) {// 160dipÆÁÄ»,±³¾°²Ã¼ô53
+        } else if (metrics.heightPixels == 480) {// 160dipï¿½ï¿½Ä»,ï¿½ï¿½ï¿½ï¿½ï¿½Ã¼ï¿½53
             newHeight = 480;
         }
 
@@ -115,7 +115,7 @@ public class Page_p1_Activity extends Activity {
         // recreate the new Bitmap
 
         // Bitmap resizedBitmap = Bitmap.createBitmap(bitmapOrg, 0, 0, width,
-        // height, matrix, true);//²»ÐèÒªËõ·Å
+        // height, matrix, true);//ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½
 
         Bitmap resizedBitmap = Bitmap.createBitmap(bitmapOrg, 0, 0, width,
                 newHeight);

@@ -196,7 +196,7 @@
 			android:name=".Equit"
 			android:label="equit" />
 		<activity
-			android:name=".Equit_tab"
+			android:name="Equit_tab"
 			android:label="equit_tab" />
 	</application>
 	<uses-sdk

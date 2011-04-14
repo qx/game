@@ -3,7 +3,7 @@ package com.fullwish.junit;
 import android.test.AndroidTestCase;
 import android.util.Log;
 
-import com.fullwish.util.NetTrans;
+import com.fullwish.utils.NetTrans;
 
 public class testXML extends AndroidTestCase {
 	private static final String TAG = "testXML";

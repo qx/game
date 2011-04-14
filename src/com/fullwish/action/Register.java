@@ -11,9 +11,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.fullwish.util.ConnUtil;
-import com.fullwish.util.MD5;
-import com.fullwish.util.PATH;
+import com.fullwish.utils.ConnUtil;
+import com.fullwish.utils.MD5;
+import com.fullwish.utils.PATH;
 
 public class Register extends Activity {
     /** Called when the activity is first created. */
@@ -52,7 +52,7 @@ public class Register extends Activity {
                 System.out.println(userpassword1+"\n"+userpassword2);
                 if (userpassword1.equals(userpassword2)) {
                   
-                    String password = MD5.MD5Encode(userpassword1);
+                    String password = userpassword1;
                     /* true */
                     /* 组拼json */
                     /*
