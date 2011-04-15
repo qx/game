@@ -201,7 +201,7 @@
 			android:label="equit_tab" />
 	</application>
 	<uses-sdk
-		android:minSdkVersion="6" />
+		android:minSdkVersion="7" />
 	<instrumentation
 		android:name="android.test.InstrumentationTestRunner"
 		android:targetPackage="com.fullwish.action"

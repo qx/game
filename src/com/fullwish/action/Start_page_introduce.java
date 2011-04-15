@@ -1,5 +1,8 @@
 package com.fullwish.action;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,7 +11,11 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.fullwish.utils.ConnUtil;
 import com.fullwish.utils.DisplayTools;
+import com.fullwish.utils.JsonUtil;
+import com.fullwish.utils.PATH;
+import com.fullwish.utils.SHARE;
 
 public class Start_page_introduce extends Activity {
     private Button introduce_start;
@@ -25,6 +32,9 @@ public class Start_page_introduce extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.start_page_introduce);
+        // final SharedPreferences session =
+        // this.getSharedPreferences("session", MODE_WORLD_WRITEABLE);//
+        // 获取存储会话的shareperference
         extras_introduce = this.getIntent().getExtras();
         content = "尊敬的  " + extras_introduce.getString("user_nickname") + "\n" + "    您好,欢迎来到移动三国:" + "您所选择的国家是:"
                 + extras_introduce.getString("user_country") + "\n" + "职业是:"
@@ -37,27 +47,26 @@ public class Start_page_introduce extends Activity {
 
         introduce_start.setOnClickListener(new OnClickListener() {
 
+            @SuppressWarnings("unchecked")
             @Override
             public void onClick(View v) {
 
                 Intent introduce = new Intent(Start_page_introduce.this, Page_p1_Activity.class);
-                /*
-                 * Socket socket = null; String message =
-                 * mEditText.getText().toString() + "\r\n"; //创建Socket socket =
-                 * new Socket("192.168.1.110",54321); //向服务器发送消息 PrintWriter out
-                 * = new PrintWriter( new BufferedWriter( new
-                 * OutputStreamWriter(socket.getOutputStream())),true);
-                 * out.println(message);
-                 * 
-                 * //接收来自服务器的消息 BufferedReader br = new BufferedReader(new
-                 * InputStreamReader(socket.getInputStream())); String msg =
-                 * br.readLine();
-                 * 
-                 * if ( msg != null ) { mTextView.setText(msg); } else {
-                 * mTextView.setText("数据错误!"); } //关闭流 out.close(); br.close();
-                 * //关闭Socket socket.close();
-                 */
+                introduce.putExtras(extras_introduce);
+                /* user_country,user_carrer,user_nickname保存到服务器 */
+                /* 转成jsonString */
+                HashMap<String, String> user_map = new HashMap<String, String>();
+                user_map.put("user_country", extras_introduce.getString("user_country"));// 从Bundle取数据
+                user_map.put("user_carrer", extras_introduce.getString("user_carrer"));// 从Bundle取数据
+                user_map.put("user_nickname", extras_introduce.getString("user_nickname"));// 从Bundle取数据
 
+                DisplayTools.show(SHARE.SESSION.getString("user_email", "") + SHARE.SESSION.getString("ssid", ""));
+                user_map.put("user_email", SHARE.SESSION.getString("user_email", ""));// 从shareperference取user_email
+                user_map.put("ssid", SHARE.SESSION.getString("ssid", ""));// 从shareperference取ssid
+                String user_string = JsonUtil.map2Json((Map) user_map);
+                /** user_string 提交数据库存储ConnUtil.updateUser() */
+                ConnUtil.userUpdate(user_string, PATH.P1_UPDATE);
+                System.out.println(user_string);
                 startActivityForResult(introduce, 1);
             }
         });

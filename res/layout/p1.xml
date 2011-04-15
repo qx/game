@@ -81,9 +81,9 @@
 			android:textStyle="bold"
 			android:text="30/30" />
 		<!-- 帮助 -->
-		<ImageView
+		<ImageButton
 			android:id="@+id/p1_ib_01"
-			android:src="@drawable/p1_ib_01"
+			android:background="@drawable/p1_ib_01"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:layout_toRightOf="@id/p1_pb_01"

@@ -56,6 +56,6 @@ public class Start_page_nickname extends Activity {
                 finish();
             }
         });
-        DisplayTools.show(extras3.getString("国家") + ":   " + extras3.getString("职业"));
+        DisplayTools.show(extras3.getString("user_country") + ":   " + extras3.getString("user_carrer"));
     }
 }

@@ -11,6 +11,10 @@ import android.app.Application;
 public class MyApplication extends Application {
     private static MyApplication instance;
 
+    /**
+     * 
+     * @return context
+     */
     public static MyApplication getInstance() {
         return instance;
     }
