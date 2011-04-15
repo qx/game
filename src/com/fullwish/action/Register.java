@@ -12,7 +12,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.fullwish.utils.ConnUtil;
-import com.fullwish.utils.MD5;
 import com.fullwish.utils.PATH;
 
 public class Register extends Activity {
@@ -24,18 +23,16 @@ public class Register extends Activity {
     private EditText register_password1;
 
     private EditText register_password2;
+
     private JSONObject user_json;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.register);
-        register_username = (EditText) this
-                .findViewById(R.id.register_username);
-        register_password1 = (EditText) this
-                .findViewById(R.id.register_password1);
-        register_password2 = (EditText) this
-                .findViewById(R.id.register_password2);
+        register_username = (EditText) this.findViewById(R.id.register_username);
+        register_password1 = (EditText) this.findViewById(R.id.register_password1);
+        register_password2 = (EditText) this.findViewById(R.id.register_password2);
         register_register = (Button) this.findViewById(R.id.register_register);
 
         /* 监听注册按钮 */
@@ -49,32 +46,34 @@ public class Register extends Activity {
                 /* 取得第二次密码 */
                 String userpassword2 = register_password2.getText().toString();
                 /* 两次密码判断 */
-                System.out.println(userpassword1+"\n"+userpassword2);
+                System.out.println(userpassword1 + "\n" + userpassword2);
                 if (userpassword1.equals(userpassword2)) {
-                  
+
                     String password = userpassword1;
                     /* true */
                     /* 组拼json */
                     /*
-                     *JSONObject user_json = (JSONObject) new
+                     * JSONObject user_json = (JSONObject) new
                      * JSONParser().parse
                      * ("{\"name\":\"MyNode\", \"width\":200, \"height\":100}");
                      */
-                    
+
                     try {
                         /**
                          * {"user_email":username,"user_password":password}
                          */
-                        user_json=new JSONObject("{\"user_email\":"+username
-                                +",\"user_password\":"+password+"}") ;
-                     /*   user_json.put("user_email", username);
-                        user_json.put("user_password", password);*/
+                        user_json = new JSONObject("{\"user_email\":" + username + ",\"user_password\":" + password
+                                + "}");
+                        /*
+                         * user_json.put("user_email", username);
+                         * user_json.put("user_password", password);
+                         */
                     } catch (JSONException e) {
                         // TODO Auto-generated catch block
                         e.printStackTrace();
                     }
                     /* 用户名,密码,email存入httpentity */
-                    System.out.println(PATH.BASE+PATH.REGISTER);
+                    System.out.println(PATH.BASE + PATH.REGISTER);
                     System.out.println(user_json.toString());
                     ConnUtil.addUser(user_json, PATH.BASE + PATH.REGISTER);
                     Toast.makeText(Register.this, user_json.toString(), Toast.LENGTH_SHORT).show();

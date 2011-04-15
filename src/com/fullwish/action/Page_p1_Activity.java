@@ -17,9 +17,6 @@ import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.fullwish.utils.ConnUtil;
-import com.fullwish.utils.PATH;
-
 public class Page_p1_Activity extends Activity {
     private ImageButton qiangdipan;
 
@@ -49,23 +46,22 @@ public class Page_p1_Activity extends Activity {
 
     private RelativeLayout background;
 
-    private JSONObject user;
+    // private JSONObject user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.p1);
 
-        /* ��ʼ������ */
-      //  ConnUtil.addUser("BAST_PATH/p1_add");// ��
+        // ConnUtil.addUser("BAST_PATH/p1_add");// ��
         // ConnUtil.deleteUserInfo(user, "http//127.0.0.1/p1_delete"); // ɾ
         // ConnUtil.updateUser(user, "http//127.0.0.1/p1_update"); // ��
-//        user = ConnUtil.searchUser("mygoogle@gmail.com",
-//               PATH.BASE+"/p1_search");// ��
+        // user = ConnUtil.searchUser("mygoogle@gmail.com",
+        // PATH.BASE+"/p1_search");// ��
         try {
-          //  JSONObject jsob1 = (JSONObject) user.get("user");
-            JSONObject user= new JSONObject(
-            "{\"userGoogle\":\"zhangshan@gmail.com\",\"userNickname\":\"�ŷɺ���\",\"userLevel\":\"1\"}");
+            // JSONObject jsob1 = (JSONObject) user.get("user");
+            JSONObject user = new JSONObject(
+                    "{\"userGoogle\":\"zhangshan@gmail.com\",\"userNickname\":\"�ŷɺ���\",\"userLevel\":\"1\"}");
             System.out.println(user);
         } catch (JSONException e) {
             // TODO Auto-generated catch block
@@ -89,17 +85,16 @@ public class Page_p1_Activity extends Activity {
         DisplayMetrics metrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(metrics);
         // crop png
-        Bitmap bitmapOrg = BitmapFactory.decodeResource(getResources(),
-                R.drawable.p1_bg_01);
+        Bitmap bitmapOrg = BitmapFactory.decodeResource(getResources(), R.drawable.p1_bg_01);
 
         int width = bitmapOrg.getWidth();
         int height = bitmapOrg.getHeight();
         int newWidth = 320;
         int newHeight = 0;
-        if (metrics.heightPixels == 533) {// 240Dip��Ļ+53,�������ü�
+        if (metrics.heightPixels == 533) {// 240Dip+53
             newHeight = 533;
             adapter.setMinimumHeight(53);
-        } else if (metrics.heightPixels == 480) {// 160dip��Ļ,�����ü�53
+        } else if (metrics.heightPixels == 480) {// 160dip
             newHeight = 480;
         }
 
@@ -115,10 +110,9 @@ public class Page_p1_Activity extends Activity {
         // recreate the new Bitmap
 
         // Bitmap resizedBitmap = Bitmap.createBitmap(bitmapOrg, 0, 0, width,
-        // height, matrix, true);//����Ҫ����
+        // height, matrix, true);//缩放比例
 
-        Bitmap resizedBitmap = Bitmap.createBitmap(bitmapOrg, 0, 0, width,
-                newHeight);
+        Bitmap resizedBitmap = Bitmap.createBitmap(bitmapOrg, 0, 0, width, newHeight);
         // make a Drawable from Bitmap to allow to set the BitMap
         // to the ImageView, ImageButton or what ever
         BitmapDrawable bmd = new BitmapDrawable(resizedBitmap);
@@ -131,68 +125,57 @@ public class Page_p1_Activity extends Activity {
             public void onClick(View v) {
                 switch (v.getId()) {
                 case R.id.p1_ib_02:/** Start a new Activity MyCards.java */
-                    Intent intent31 = new Intent(Page_p1_Activity.this,
-                            Page_p31_Activity.class);
+                    Intent intent31 = new Intent(Page_p1_Activity.this, Page_p31_Activity.class);
                     startActivityForResult(intent31, 1);
                     System.out.println("click rob");
                     break;
                 case R.id.p1_ib_03:/** AlerDialog when click on Exit */
-                    Intent intent3 = new Intent(Page_p1_Activity.this,
-                            Page_p3_Activity.class);
+                    Intent intent3 = new Intent(Page_p1_Activity.this, Page_p3_Activity.class);
                     startActivityForResult(intent3, 1);
                     System.out.println("click invite");
                     break;
                 case R.id.p1_ib_04:/** AlerDialog when click on Exit */
-                    Intent intent5 = new Intent(Page_p1_Activity.this,
-                            Page_p5_Activity.class);
+                    Intent intent5 = new Intent(Page_p1_Activity.this, Page_p5_Activity.class);
                     startActivityForResult(intent5, 1);
                     System.out.println("skills");
                     break;
                 case R.id.p1_ib_05:/** AlerDialog when click on Exit */
-                    Intent intent678 = new Intent(Page_p1_Activity.this,
-                            Page_p678_Activity.class);
+                    Intent intent678 = new Intent(Page_p1_Activity.this, Page_p678_Activity.class);
                     startActivityForResult(intent678, 1);
                     System.out.println("kid");
                     break;
                 case R.id.p1_ib_06:/** AlerDialog when click on Exit */
-                    Intent intent12 = new Intent(Page_p1_Activity.this,
-                            Page_p12_Activity.class);
+                    Intent intent12 = new Intent(Page_p1_Activity.this, Page_p12_Activity.class);
                     startActivityForResult(intent12, 1);
                     System.out.println("kill");
                     break;
                 case R.id.p1_ib_07:/** AlerDialog when click on Exit */
-                    Intent intent25 = new Intent(Page_p1_Activity.this,
-                            Page_p25_Activity.class);
+                    Intent intent25 = new Intent(Page_p1_Activity.this, Page_p25_Activity.class);
                     startActivityForResult(intent25, 1);
                     System.out.println("equi");
                     break;
                 case R.id.p1_ib_08:/** AlerDialog when click on Exit */
-                    Intent intent14 = new Intent(Page_p1_Activity.this,
-                            Page_p14_Activity.class);
+                    Intent intent14 = new Intent(Page_p1_Activity.this, Page_p14_Activity.class);
                     startActivityForResult(intent14, 1);
                     System.out.println("blog");
                     break;
                 case R.id.p1_ib_09:
-                    Intent intent16 = new Intent(Page_p1_Activity.this,
-                            Page_p16_Activity.class);
+                    Intent intent16 = new Intent(Page_p1_Activity.this, Page_p16_Activity.class);
                     startActivityForResult(intent16, 1);
                     System.out.println("friend");
                     break;
                 case R.id.p1_ib_10:/** AlerDialog when click on Exit */
-                    Intent intent23 = new Intent(Page_p1_Activity.this,
-                            Page_p23_Activity.class);
+                    Intent intent23 = new Intent(Page_p1_Activity.this, Page_p23_Activity.class);
                     startActivityForResult(intent23, 1);
                     System.out.println("business");
                     break;
                 case R.id.p1_ib_11:/** AlerDialog when click on Exit */
-                    Intent intent20 = new Intent(Page_p1_Activity.this,
-                            Page_p20_Activity.class);
+                    Intent intent20 = new Intent(Page_p1_Activity.this, Page_p20_Activity.class);
                     startActivityForResult(intent20, 1);
                     System.out.println("docter");
                     break;
                 case R.id.p1_ib_12:/** AlerDialog when click on Exit */
-                    Intent intent24 = new Intent(Page_p1_Activity.this,
-                            Page_p24_Activity.class);
+                    Intent intent24 = new Intent(Page_p1_Activity.this, Page_p24_Activity.class);
                     startActivityForResult(intent24, 1);
                     System.out.println("bank");
                     break;

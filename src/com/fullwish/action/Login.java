@@ -14,10 +14,10 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
-import android.widget.Toast;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 
 import com.fullwish.utils.ConnUtil;
+import com.fullwish.utils.DisplayTools;
 import com.fullwish.utils.JsonUtil;
 import com.fullwish.utils.PATH;
 
@@ -46,8 +46,9 @@ public class Login extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
-       // extras_login = this.getIntent().getExtras();
-        extras_login= new Bundle();
+
+        // extras_login = this.getIntent().getExtras();
+        extras_login = new Bundle();
         login_login = (Button) this.findViewById(R.id.login_login);
         login_register = (Button) this.findViewById(R.id.login_register);
         login_findpassword = (Button) this.findViewById(R.id.login_findpassword);
@@ -115,11 +116,14 @@ public class Login extends Activity {
                     user_map.put("user_email", username);
                     user_map.put("user_password", password);
                     String user_string = JsonUtil.map2Json((Map) user_map);
-                    Toast.makeText(Login.this, user_string, Toast.LENGTH_SHORT).show();
+                    // Toast.makeText(Login.this, user_string,
+                    // Toast.LENGTH_SHORT).show();
+                    DisplayTools.show(user_string);
+
                     Boolean ispass = ConnUtil.userLogin(user_string, PATH.BASE + PATH.LOGIN);// 验证用户
                     System.out.println(ConnUtil.getSsid());
                     if (ispass) {
-                        System.out.println("extras_login "+ConnUtil.getUser());
+                        System.out.println("extras_login " + ConnUtil.getUser());
                         System.out.println(ConnUtil.getSsid());
                         extras_login.putString("user", ConnUtil.getUser());
                         extras_login.putString("ssid", ConnUtil.getSsid());
@@ -127,7 +131,9 @@ public class Login extends Activity {
                         intent1.putExtras(extras_login);
                         startActivityForResult(intent1, 1);
                     } else {
-                        Toast.makeText(Login.this, "登录失败,请检查用户名或者密码", Toast.LENGTH_SHORT).show();
+                        // Toast.makeText(Login.this, "登录失败,请检查用户名或者密码",
+                        // Toast.LENGTH_SHORT).show();
+                        DisplayTools.show("登录失败,请检查用户名或者密码");
                     }
                     break;
                 case R.id.login_register:

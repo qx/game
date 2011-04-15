@@ -7,7 +7,8 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import com.fullwish.utils.DisplayTools;
 
 public class Start_page_introduce extends Activity {
     private Button introduce_start;
@@ -25,8 +26,9 @@ public class Start_page_introduce extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.start_page_introduce);
         extras_introduce = this.getIntent().getExtras();
-        content = "尊敬的" + extras_introduce.getString("user_nickname") + ",您好,欢迎来到移动三国:" + "您所选择的国家是"
-                + extras_introduce.getString("user_country") + ",职业是," + extras_introduce.getString("user_carrer");
+        content = "尊敬的  " + extras_introduce.getString("user_nickname") + "\n" + "    您好,欢迎来到移动三国:" + "您所选择的国家是:"
+                + extras_introduce.getString("user_country") + "\n" + "职业是:"
+                + extras_introduce.getString("user_carrer");
         textContent = (TextView) this.findViewById(R.id.introduce_1);
         introduce_start = (Button) this.findViewById(R.id.introduce_2);
         introduce_exit = (Button) this.findViewById(R.id.introduce_3);
@@ -66,13 +68,8 @@ public class Start_page_introduce extends Activity {
                 finish();
             }
         });
-        // ////////////////test//////////////////
-        // ////////////////////////////////
-        Toast.makeText(
-                this,
-                extras_introduce.getString("国家") + ":   " + extras_introduce.getString("职业") + ":  "
-                        + extras_introduce.getString("昵称"), Toast.LENGTH_SHORT).show();// test
-        // ////////////////test//////////////////////////////////////////////////
+        DisplayTools.show(extras_introduce.getString("user_country") + ":   "
+                + extras_introduce.getString("user_carrer") + ":  " + extras_introduce.getString("user_nickname"));// test
 
     }
 }

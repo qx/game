@@ -3,13 +3,13 @@ package com.fullwish.action;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.Toast;
+
+import com.fullwish.utils.DisplayTools;
 
 public class Start_page_country extends Activity {
     /** Called when the activity is first created. */
@@ -70,12 +70,12 @@ public class Start_page_country extends Activity {
             @Override
             public void onClick(View v) {
                 if (isChoose == true) {
-
+                    DisplayTools.show(extras_country.getString("user_country"));
                     Intent career = new Intent(Start_page_country.this, Start_page_career.class);
                     career.putExtras(extras_country);
                     startActivityForResult(career, 1);
                 } else {
-                    DisplayToast("请您选择国家");
+                    DisplayTools.show("请您选择国家");
                 }
             }
         });
@@ -88,12 +88,4 @@ public class Start_page_country extends Activity {
         });
     }
 
-    /* 显示Toast */
-    public void DisplayToast(String str) {
-        Toast toast = Toast.makeText(this, str, Toast.LENGTH_LONG);
-        // 设置toast显示的位置
-        toast.setGravity(Gravity.TOP, 0, 220);
-        // 显示该Toast
-        toast.show();
-    }
 }

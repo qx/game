@@ -8,7 +8,8 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.Toast;
+
+import com.fullwish.utils.DisplayTools;
 
 public class Start_page_career extends Activity {
     private Button career_next;
@@ -20,6 +21,8 @@ public class Start_page_career extends Activity {
     private RadioGroup m_RadioGroup;
 
     private RadioButton m_Radio1, m_Radio2, m_Radio3;
+
+    private Boolean isChoose = false;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -40,20 +43,28 @@ public class Start_page_career extends Activity {
                 // 获取选择的数据,并将其发送给服务器(测试)
                 if (checkedId == m_Radio1.getId()) {
                     extras_career.putString("user_carrer", "智力");
+                    isChoose = true;
                 } else if (checkedId == m_Radio2.getId()) {
                     extras_career.putString("user_carrer", "敏捷");
+                    isChoose = true;
                 } else if (checkedId == m_Radio3.getId()) {
                     extras_career.putString("user_carrer", "力量");
+                    isChoose = true;
                 }
             }
         });
-        Toast.makeText(this, extras_career.getString("国家"), Toast.LENGTH_SHORT).show();// test
+        m_RadioGroup.getCheckedRadioButtonId();
         career_next.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent nickname = new Intent(Start_page_career.this, Start_page_nickname.class);
-                nickname.putExtras(extras_career);
-                startActivityForResult(nickname, 1);
+                if (isChoose == true) {
+                    DisplayTools.show(extras_career.getString("user_carrer"));// test
+                    Intent nickname = new Intent(Start_page_career.this, Start_page_nickname.class);
+                    nickname.putExtras(extras_career);
+                    startActivityForResult(nickname, 1);
+                } else {
+                    DisplayTools.show("请您选择职业");
+                }
             }
         });
         career_back.setOnClickListener(new OnClickListener() {
