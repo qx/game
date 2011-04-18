@@ -211,34 +211,36 @@ public class ConnUtil {
             // ///////////////////////////////////////////////////////////////
             if (httpResponse.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
                 // 取得返回的字符串
-                String strResult = EntityUtils.toString(httpResponse.getEntity());
-                System.out.println("httpResponse: " + strResult);
+                String jsonString = EntityUtils.toString(httpResponse.getEntity());
+                System.out.println("httpResponse: " + jsonString);
+                jsob = new JSONObject(jsonString);
+                System.out.println("connutil_userlogin" + jsonString);
+                // inStream.close();
+                // conn.disconnect();
+                /*
+                 * {"user_response":"{\"ssid\":\"629C53AB21CBFCDF4EA
+                 * 79D9025ACC134\",\"user\":\"abc@test.com\"}"}
+                 */// System.out.println(jsob.getJSONObject("user_response").toString());//不是JSONObject
+                String username = (new JSONObject(user_string)).getString("user_email");
+                ConnUtil.setSsid(new JSONObject(jsob.get("user_response").toString()).getString("ssid"));
+                ConnUtil.setUser(new JSONObject(jsob.get("user_response").toString()).getString("user"));
+                if (new JSONObject(jsob.get("user_response").toString()).getString("user").equals(username)) {
+                    ispass = true;
+                    System.out.println("登陆成功");
+                } else {// 用户空则登录失败
+                    System.out.println(new JSONObject(jsob.get("user_response").toString()).getString("error_message"));
+                    ispass = false;
+                }
             }
 
-            URL url = new URL(path);
+            // URL url = new URL(path);
+            // // HttpURLConnection conn = (HttpURLConnection)
+            // // url.openConnection();
             // HttpURLConnection conn = (HttpURLConnection)
             // url.openConnection();
-            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-            InputStream inStream = conn.getInputStream();
-            byte[] data = readStream(inStream);
-            String jsonString = new String(data);
-            jsob = new JSONObject(jsonString);
-            System.out.println("connutil_userlogin" + jsonString);
-            /*
-             * {"user_response":"{\"ssid\":\"629C53AB21CBFCDF4EA
-             * 79D9025ACC134\",\"user\":\"abc@test.com\"}"}
-             */// System.out.println(jsob.getJSONObject("user_response").toString());//不是JSONObject
-            inStream.close();
-            conn.disconnect();
-            String username = (new JSONObject(user_string)).getString("user_email");
-            ConnUtil.setSsid(new JSONObject(jsob.get("user_response").toString()).getString("ssid"));
-            ConnUtil.setUser(new JSONObject(jsob.get("user_response").toString()).getString("user"));
-            if (new JSONObject(jsob.get("user_response").toString()).getString("user").equals(username)) {
-                ispass = true;
-            } else {// 用户空则登录失败
-                System.out.println(new JSONObject(jsob.get("user_response").toString()).getString("error_message"));
-                ispass = false;
-            }
+            // InputStream inStream = conn.getInputStream();
+            // byte[] data = readStream(inStream);
+            // String jsonString = new String(data);
         } catch (Exception e) {
             e.printStackTrace();
         }

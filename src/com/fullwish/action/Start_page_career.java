@@ -42,13 +42,13 @@ public class Start_page_career extends Activity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 // 获取选择的数据,并将其发送给服务器(测试)
                 if (checkedId == m_Radio1.getId()) {
-                    extras_career.putString("user_carrer", "智力");
+                    extras_career.putString("user_career", "智力");
                     isChoose = true;
                 } else if (checkedId == m_Radio2.getId()) {
-                    extras_career.putString("user_carrer", "敏捷");
+                    extras_career.putString("user_career", "敏捷");
                     isChoose = true;
                 } else if (checkedId == m_Radio3.getId()) {
-                    extras_career.putString("user_carrer", "力量");
+                    extras_career.putString("user_career", "力量");
                     isChoose = true;
                 }
             }
@@ -58,7 +58,7 @@ public class Start_page_career extends Activity {
             @Override
             public void onClick(View v) {
                 if (isChoose == true) {
-                    DisplayTools.show(extras_career.getString("user_carrer"));// test
+                    DisplayTools.show(extras_career.getString("user_career"));// test
                     Intent nickname = new Intent(Start_page_career.this, Start_page_nickname.class);
                     nickname.putExtras(extras_career);
                     startActivityForResult(nickname, 1);

@@ -38,7 +38,7 @@ public class Start_page_introduce extends Activity {
         extras_introduce = this.getIntent().getExtras();
         content = "尊敬的  " + extras_introduce.getString("user_nickname") + "\n" + "    您好,欢迎来到移动三国:" + "您所选择的国家是:"
                 + extras_introduce.getString("user_country") + "\n" + "职业是:"
-                + extras_introduce.getString("user_carrer");
+                + extras_introduce.getString("user_career");
         textContent = (TextView) this.findViewById(R.id.introduce_1);
         introduce_start = (Button) this.findViewById(R.id.introduce_2);
         introduce_exit = (Button) this.findViewById(R.id.introduce_3);
@@ -53,11 +53,11 @@ public class Start_page_introduce extends Activity {
 
                 Intent introduce = new Intent(Start_page_introduce.this, Page_p1_Activity.class);
                 introduce.putExtras(extras_introduce);
-                /* user_country,user_carrer,user_nickname保存到服务器 */
+                /* user_country,user_career,user_nickname保存到服务器 */
                 /* 转成jsonString */
                 HashMap<String, String> user_map = new HashMap<String, String>();
                 user_map.put("user_country", extras_introduce.getString("user_country"));// 从Bundle取数据
-                user_map.put("user_carrer", extras_introduce.getString("user_carrer"));// 从Bundle取数据
+                user_map.put("user_career", extras_introduce.getString("user_career"));// 从Bundle取数据
                 user_map.put("user_nickname", extras_introduce.getString("user_nickname"));// 从Bundle取数据
 
                 DisplayTools.show(SHARE.SESSION.getString("user_email", "") + SHARE.SESSION.getString("ssid", ""));
@@ -65,7 +65,8 @@ public class Start_page_introduce extends Activity {
                 user_map.put("ssid", SHARE.SESSION.getString("ssid", ""));// 从shareperference取ssid
                 String user_string = JsonUtil.map2Json((Map) user_map);
                 /** user_string 提交数据库存储ConnUtil.updateUser() */
-                ConnUtil.userUpdate(user_string, PATH.P1_UPDATE);
+                
+                ConnUtil.userUpdate(user_string, PATH.P1_UPDATE);//更新用户信息
                 System.out.println(user_string);
                 startActivityForResult(introduce, 1);
             }
@@ -78,7 +79,7 @@ public class Start_page_introduce extends Activity {
             }
         });
         DisplayTools.show(extras_introduce.getString("user_country") + ":   "
-                + extras_introduce.getString("user_carrer") + ":  " + extras_introduce.getString("user_nickname"));// test
+                + extras_introduce.getString("user_career") + ":  " + extras_introduce.getString("user_nickname"));// test
 
     }
 }
