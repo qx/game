@@ -6,18 +6,18 @@ import android.os.Bundle;
 import android.widget.TabHost;
 
 public class Mission_tab  extends TabActivity {
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setTitle("Tab²âÊÔ");
-		TabHost tabHost = getTabHost();
-		Intent testlist = new Intent(Mission_tab.this, Mission_list.class);
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setTitle("Tabæµ‹è¯•");
+        TabHost tabHost = getTabHost();
+        Intent testlist = new Intent(Mission_tab.this, Mission_list.class);
 
-		tabHost.addTab(tabHost.newTabSpec("tab1_TabSpec").setIndicator(
-				"¼¼ÄÜÀàÒ¼").setContent(testlist));
-		tabHost.addTab(tabHost.newTabSpec("tab2").setIndicator("ÙE")
-				.setContent(testlist));
-		tabHost.addTab(tabHost.newTabSpec("tab3").setIndicator("Èş")
-				.setContent(testlist));
-	}
+        tabHost.addTab(tabHost.newTabSpec("tab1_TabSpec").setIndicator(
+                "æŠ€èƒ½ç±»å£¹").setContent(testlist));
+        tabHost.addTab(tabHost.newTabSpec("tab2").setIndicator("è²³")
+                .setContent(testlist));
+        tabHost.addTab(tabHost.newTabSpec("tab3").setIndicator("å")
+                .setContent(testlist));
+    }
 
 }
