@@ -4,9 +4,9 @@
 package com.fullwish.utils;
 
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,12 +14,15 @@ import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
 import org.apache.http.NameValuePair;
+import org.apache.http.ParseException;
+import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
@@ -68,7 +71,7 @@ public class ConnUtil {
      *            :/p1_update
      */
     public static void userUpdate(String user_string, String externalpath) {
-        System.out.println("connUtil userUpdate");
+        System.out.println("ConnUtil userUpdate start");
         /* 发送参数(user_email) */
         HttpPost httpRequest = new HttpPost(PATH.BASE + externalpath);
         List<NameValuePair> params = new ArrayList<NameValuePair>();
@@ -81,7 +84,7 @@ public class ConnUtil {
         } catch (Exception e1) {
             e1.printStackTrace();
         }
-
+        System.out.println("ConnUtil userUpdate start");
     }
 
     /**
@@ -94,10 +97,10 @@ public class ConnUtil {
      *            externalpath 服务器基本访问路径BASE="http://192.168.2.103:8080";
      *            externalpath=/p1_search
      * @return JSONObject 由服务器传来的json,构建成JSONObject
-     * 
      */
     public static JSONObject searchUser(String user_email, String externalpath) {
-        System.out.println("connUtil searchUser");
+        System.out.println("ConnUtil searchUser start");
+        JSONObject jsob = null;
         /* 发送参数(user_email) */
         HttpPost httpRequest = new HttpPost(PATH.BASE + externalpath);
         List<NameValuePair> params = new ArrayList<NameValuePair>();
@@ -107,49 +110,30 @@ public class ConnUtil {
             httpRequest.setEntity(httpentity);
             HttpClient httpclient = new DefaultHttpClient();
             HttpResponse httpResponse = httpclient.execute(httpRequest);// 执行请求
-        } catch (Exception e1) {
-            e1.printStackTrace();
-        }
-        /* 接收数据(user) */
-        /*
-         * {"user":
-         * {"user_action":0,"user_attack":0,"user_bekidnap":0,"user_carrer"
-         * :null,
-         * "user_country":null,"user_defense":0,"user_email":"abc@test.com"
-         * ,"user_energy"
-         * :0,"user_experience":0,"user_fight_lose":0,"user_fight_win"
-         * :0,"user_friend"
-         * :0,"user_healthpoint":0,"user_hideAttack":0,"user_hideDefense"
-         * :0,"user_kidnap"
-         * :0,"user_level":0,"user_microblog":null,"user_money":0
-         * ,"user_nickname"
-         * :null,"user_password":"444bcb3a3fcf8389296c49467f27e1d6"
-         * ,"user_rescue"
-         * :0,"user_reward_Point":0,"user_skill_Point":0},"user_string":null}
-         */
-        // System.out.println("connutil_searchUser start1");
-        String new_path = PATH.BASE + externalpath;
-        // System.out.println("connutil_searchUser start2");
-        JSONObject jsob = null;
-        System.out.println("connutil_searchUser start3" + new_path);
-        try {
-            URL url = new URL(new_path);
-            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-            conn.setRequestMethod("GET");
-            conn.setConnectTimeout(6 * 1000);
-            if (conn.getResponseCode() == 200) {
-                InputStream inStream = conn.getInputStream();
-                byte[] data = readStream(inStream);
-                String jsonString = new String(data);
+            if (httpResponse.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
+                // 取得返回的字符串
+                String jsonString = EntityUtils.toString(httpResponse.getEntity());
                 jsob = new JSONObject(jsonString);
-                inStream.close();
-                conn.disconnect();
-                // System.out.println("connutil_searchUser jsob is : " +
-                // jsob.toString());
+                System.out.println("ConnUtil searchUser over   " + jsonString);
             }
-        } catch (Exception e) {
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        } catch (ClientProtocolException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
         }
         return jsob;
+        // 与action getter方法对应user //
+        // {"user":{"user_country":"蜀国","user_action":3,"user_level":1,
+        // ,"user_healthpoint":100,"user_skill_Point":0,"user_reward_Point":0,"user_nickname":
+        // "诸葛亮他爹","user_email":"test2@gmail.com","user_rescue":0,"user_bekidnap":0,"
+        // user_fight_win":0,"user_attack":0,"user_career":"智力","user_hideAttack":0,"user_experience":0,"user_password":"444bcb3a3fcf8389296c49467f27e1d6","user_kidnap":0,"user_money":0,"user_energy":10,"user_defense":0},"user_string":null}
+
     }
 
     /**
@@ -161,10 +145,7 @@ public class ConnUtil {
      *            paht
      */
     public static void addUser(JSONObject user, String path) {
-        /*
-         * String user_email=user.getString("user_email"); String
-         * user_password=user.getString("user_password");
-         */
+        System.out.println("ConnUtil addUser start");
         try {
             HttpPost httpRequest = new HttpPost(path);
             List<NameValuePair> params = new ArrayList<NameValuePair>();
@@ -173,12 +154,10 @@ public class ConnUtil {
             httpRequest.setEntity(httpentity);
             HttpClient httpclient = new DefaultHttpClient();
             HttpResponse httpResponse = httpclient.execute(httpRequest);
-
-            // System.out.println("connutil:"+user.toString());
         } catch (Exception e) {
             e.printStackTrace();
         }
-
+        System.out.println("ConnUtil addUser over");
     }
 
     /**
@@ -191,7 +170,7 @@ public class ConnUtil {
      * 
      */
     public static boolean userLogin(String user_string, String path) {// 登录方法
-        System.out.println("connUtil userLogin");
+        System.out.println("ConnUtil userLogin start");
         JSONObject jsob = null;
         Boolean ispass = false;
         try {
@@ -202,25 +181,11 @@ public class ConnUtil {
             httpRequest.setEntity(httpentity);
             HttpClient httpclient = new DefaultHttpClient();
             HttpResponse httpResponse = httpclient.execute(httpRequest);// 执行请求
-
-            // ///////////////////////////////////////////////////////////////
-            // ///////////得到服务器返回数据必须重新建立连接?///////////////////
-            // ////////////////////导致执行两次action中方法/////////////////////
-            // ///////////////////////////////////////////////////////////////
-            // ///////////////////////////////////////////////////////////////
-            // ///////////////////////////////////////////////////////////////
+            // /////////////////////////处理返回结果/////////////////////////////////////
             if (httpResponse.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
                 // 取得返回的字符串
                 String jsonString = EntityUtils.toString(httpResponse.getEntity());
-                System.out.println("httpResponse: " + jsonString);
                 jsob = new JSONObject(jsonString);
-                System.out.println("connutil_userlogin" + jsonString);
-                // inStream.close();
-                // conn.disconnect();
-                /*
-                 * {"user_response":"{\"ssid\":\"629C53AB21CBFCDF4EA
-                 * 79D9025ACC134\",\"user\":\"abc@test.com\"}"}
-                 */// System.out.println(jsob.getJSONObject("user_response").toString());//不是JSONObject
                 String username = (new JSONObject(user_string)).getString("user_email");
                 ConnUtil.setSsid(new JSONObject(jsob.get("user_response").toString()).getString("ssid"));
                 ConnUtil.setUser(new JSONObject(jsob.get("user_response").toString()).getString("user"));
@@ -232,18 +197,10 @@ public class ConnUtil {
                     ispass = false;
                 }
             }
-
-            // URL url = new URL(path);
-            // // HttpURLConnection conn = (HttpURLConnection)
-            // // url.openConnection();
-            // HttpURLConnection conn = (HttpURLConnection)
-            // url.openConnection();
-            // InputStream inStream = conn.getInputStream();
-            // byte[] data = readStream(inStream);
-            // String jsonString = new String(data);
         } catch (Exception e) {
             e.printStackTrace();
         }
+        System.out.println("ConnUtil userLogin over");
         return ispass;
     }
 

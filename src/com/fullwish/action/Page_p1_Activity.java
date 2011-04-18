@@ -17,11 +17,14 @@ import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.fullwish.base.User;
 import com.fullwish.utils.ConnUtil;
 import com.fullwish.utils.PATH;
 
 public class Page_p1_Activity extends Activity {
-    // private JSONObject user;
+    private JSONObject user_json;// 执行ConnUtil.search返回的json
+
+    private User user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,12 +37,12 @@ public class Page_p1_Activity extends Activity {
         TextView p1_tv_01, p1_tv_02, p1_tv_03, p1_tv_04, p1_tv_05, p1_tv_06, p1_tv_07, p1_tv_08, p1_tv_09, p1_tv_10, p1_tv_11, p1_tv_12, p1_tv_13, p1_tv_14, p1_tv_15;
         ImageButton p1_ib_01, p1_ib_02, p1_ib_03, p1_ib_04, p1_ib_05, p1_ib_06, p1_ib_07, p1_ib_08, p1_ib_09, p1_ib_10, p1_ib_11, p1_ib_12;
         RelativeLayout adapter, background;
-        JSONObject user;// 执行ConnUtil.search返回
+        // JSONObject user;// 执行ConnUtil.search返回
         String user_email, user_money, user_level, user_action, user_attack, user_nickname, user_experience, user_friend, user_energy, user_healthpoint, user_carrer, user_country;
         Bundle extras_p1;
         extras_p1 = this.getIntent().getExtras();
         user_email = extras_p1.getString("user_email");
-     //   user = ConnUtil.searchUser(user_email, PATH.P1_SEARCH);
+        // user = ConnUtil.searchUser(user_email, PATH.P1_SEARCH);
         /* 组件赋值 */
         p1_tv_01 = (TextView) this.findViewById(R.id.p1_tv_01);
         p1_tv_02 = (TextView) this.findViewById(R.id.p1_tv_02);
@@ -171,28 +174,37 @@ public class Page_p1_Activity extends Activity {
         p1_ib_10.setOnClickListener(clicklistener);
         p1_ib_11.setOnClickListener(clicklistener);
         p1_ib_12.setOnClickListener(clicklistener);
-
         /* 设置数据 */
         /* 获取数据 */
-        user = ConnUtil.searchUser(user_email, PATH.P1_SEARCH);
+        System.out.println("p1_search    " + user_email);
+        user_json = ConnUtil.searchUser(user_email, PATH.P1_SEARCH);
+        user = new User(user_json);
+        // {"user":{"user_country":"蜀国","user_action":3,"user_level":1,
+        // ,"user_healthpoint":100,"user_skill_Point":0,"user_reward_Point":0,"user_nickname":
+        // "诸葛亮他爹","user_email":"test2@gmail.com","user_rescue":0,"user_bekidnap":0,"
+        // user_fight_win":0,"user_attack":0,"user_career":"智力","user_hideAttack":0,"user_experience":0,"user_password":"444bcb3a3fcf8389296c49467f27e1d6","user_kidnap":0,"user_money":0,"user_energy":10,"user_defense":0},"user_string":null}
         try {
-            System.out.println("p1 " + user.getString("user_email"));
+            System.out.println("p1_activity1 " + user.getUser_email());
+            System.out.println("p1_activity2 " + user.getUser_country());
+            //p1_tv_01.setText("test");// 金钱
+            p1_tv_01.setText(user.getUser_money()+"");// 金钱
+            p1_tv_02.setText(user.getUser_level()+"");// 等级
+            // p1_tv_03.setText(user_money_re);// 金钱恢复时间
+            p1_tv_04.setText(user.getUser_experience()+"");// 经验
+            p1_tv_05.setText(user.getUser_energy()+"");// 精力
+            // p1_tv_06.setText(user_money);
+            p1_tv_07.setText(user.getUser_healthpoint()+"");// 体力
+            // * p1_tv_08.setText(user_money);// 体力倒数
+            p1_tv_09.setText(user.getUser_action()+"");//
+            // * 移动力 p1_tv_10.setText(user_money);// 移动力倒数
+            p1_tv_11.setText(user.getUser_friend()+"");// 好友数
+            p1_tv_12.setText(user.getUser_nickname()); // * 用户昵称
+            p1_tv_13.setText(user.getUser_level()+"");// 用户等级
+            // * p1_tv_14.setText(user_money);// 广告信息
+            p1_tv_15.setText(user.getUser_email());// 玩家id
+            // */
         } catch (JSONException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        /*
-         * p1_tv_01.setText(user_money);// 金钱 p1_tv_02.setText(user_level);// 等级
-         * // p1_tv_03.setText(user_money_re);// 金钱恢复时间
-         * p1_tv_04.setText(user_experience);// 经验
-         * p1_tv_05.setText(user_money);// 精力 p1_tv_06.setText(user_money);//
-         * 精力倒数 p1_tv_07.setText(user_money);// 体力
-         * p1_tv_08.setText(user_money);// 体力倒数 p1_tv_09.setText(user_money);//
-         * 移动力 p1_tv_10.setText(user_money);// 移动力倒数
-         * p1_tv_11.setText(user_money);// 好友数 p1_tv_12.setText(user_money);//
-         * 用户昵称 p1_tv_13.setText(user_money);// 用户等级
-         * p1_tv_14.setText(user_money);// 广告信息 p1_tv_15.setText(user_money);//
-         * 玩家id
-         */
     }
 }
